@@ -284,6 +284,8 @@ int loadData(char *filename,std::vector<Record> &records,std::vector<LatLong> &l
             locations.push_back(latLong);
             records.push_back(record);
             recNum++;
+	   
+	   if(recNum>=50)break;
         }
         fclose(fp);
     }
