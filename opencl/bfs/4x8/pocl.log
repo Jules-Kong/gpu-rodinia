@@ -2,1365 +2,145 @@
 Reading File
 number of platforms:1
 vendor is The pocl project
-** Final POCL_DEBUG flags: FFFFFFFFFFFFFFFF 
 [INFO]: [HW DRIVER] in [FILE] ventus.cpp,[LINE]25,[fn] vt_dev_open: vt_dev_open : hello world from ventus.cpp
 spike device initialize: allocating local memory: to allocate at 0x70000000 with 268435456 bytes 
 spike device initialize: allocating pc source memory: to allocate at 0x80000000 with 268435456 bytes 
 device number: 1
 Creating GPU Context
-[2023-10-07 01:59:58.975373129]POCL: in fn POclCreateCommandQueue at line 99:
-  |   GENERAL |  Created Command Queue 3 (0x5583ca9c14d0) on device 0
-[2023-10-07 01:59:58.975489658]POCL: in fn void pocl_llvm_create_context(cl_context) at line 431:
-  |      LLVM |  Created context 2 (0x5583ca9c1380)
-[2023-10-07 01:59:58.5270475677]POCL: in fn POclCreateContext at line 228:
-  |   GENERAL |  Created Context 2 (0x5583ca9c1380)
-[2023-10-07 01:59:58.975525180]POCL: in fn POclRetainContext at line 33:
-  | REFCOUNTS |  Retain Context 2 (0x5583ca9c1380), Refcount: 2
-[2023-10-07 01:59:58.140558075268833]POCL: in fn POclCreateCommandQueue at line 99:
-  |   GENERAL |  Created Command Queue 4 (0x5583ca9c3900) on device 0
-[2023-10-07 01:59:58.975607213]POCL: in fn POclRetainContext at line 33:
-  | REFCOUNTS |  Retain Context 2 (0x5583ca9c1380), Refcount: 3
-[2023-10-07 01:59:58.94022104694371]POCL: in fn compile_and_link_program at line 720:
-  |      LLVM |  building program with options (null)
-[2023-10-07 01:59:58.975626625]POCL: in fn compile_and_link_program at line 757:
-  |      LLVM |  building program for 1 devs with options (null)
-[2023-10-07 01:59:58.975636996]POCL: in fn compile_and_link_program at line 761:
-  |      LLVM |     BUILDING for device: ventus
-[2023-10-07 01:59:58.975650433]POCL: in fn pocl_driver_build_source at line 712:
-  |      LLVM |  building from sources for device 0
-[2023-10-07 01:59:58.140558075530575]POCL: in fn int pocl_llvm_build_program(cl_program, unsigned int, cl_uint, const cl_program *, const char **, int) at line 413:
-  |      LLVM |  all build options: -DPOCL_DEVICE_ADDRESS_BITS=32 -D__USE_CLANG_OPENCL_C_H -xcl -Dinline= -I. -cl-kernel-arg-info  -D__ENDIAN_LITTLE__=1 -DCL_DEVICE_MAX_GLOBAL_VARIABLE_SIZE=0 -D__OPENCL_VERSION__=200 -cl-std=CL2.0 -D__OPENCL_C_VERSION__=200 -Dcl_khr_fp64=1 -D__opencl_c_generic_address_space=1 -cl-ext=-all,+cl_khr_fp64,+__opencl_c_generic_address_space -fno-builtin -triple=riscv32 -target-cpu ventus-gpgpu 
-### options: -DPOCL_DEVICE_ADDRESS_BITS=32 -D__USE_CLANG_OPENCL_C_H -xcl -Dinline= -I. -cl-kernel-arg-info  -D__ENDIAN_LITTLE__=1 -DCL_DEVICE_MAX_GLOBAL_VARIABLE_SIZE=0 -D__OPENCL_VERSION__=200 -cl-std=CL2.0 -D__OPENCL_C_VERSION__=200 -Dcl_khr_fp64=1 -D__opencl_c_generic_address_space=1 -cl-ext=-all,+cl_khr_fp64,+__opencl_c_generic_address_space -fno-builtin -triple=riscv32 -target-cpu ventus-gpgpu user_options: 
 ### Triple: riscv32, CPU: ventus-gpgpu
-[2023-10-07 01:59:59.013845720]POCL: in fn int pocl_ventus_post_build_program(cl_program, cl_uint) at line 1163:
-  |      LLVM |  running "/data/eda/work/yangzx/ventus/llvm-project/install/bin/clang -cl-std=CL2.0 -target riscv32 -mcpu=ventus-gpgpu object.cl  -o object.riscv -nodefaultlibs -Wl,/data/eda/work/yangzx/ventus/llvm-project/install/lib/clang/16/../../crt0.o -Wl,/data/eda/work/yangzx/ventus/llvm-project/install/lib/clang/16/../../riscv32clc.o -Wl,--gc-sections -L/data/eda/work/yangzx/ventus/llvm-project/install/lib/clang/16/../../ -lworkitem -I/data/eda/work/yangzx/ventus/llvm-project/install/lib/clang/16/../../../../libclc/generic/include -O1 -Wl,-T,/data/eda/work/yangzx/ventus/llvm-project/install/lib/clang/16/../../../../utils/ldscripts/ventus/elf32lriscv.ld -Wl,--init=BFS_1  -w "
-[2023-10-07 01:59:59.140557356551812]POCL: in fn int pocl_ventus_post_build_program(cl_program, cl_uint) at line 1181:
-  |      LLVM |  after calling clang, the output is : ""
-[2023-10-07 01:59:59.256907409]POCL: in fn POclCreateKernel at line 139:
-  |   GENERAL |  Created Kernel BFS_1 (0x5583ca9c9c60)
-[2023-10-07 01:59:59.256928262]POCL: in fn POclCreateKernel at line 139:
-  |   GENERAL |  Created Kernel BFS_2 (0x5583ca9ccdb0)
-[2023-10-07 01:59:59.256950951]POCL: in fn POclRetainContext at line 33:
-  | REFCOUNTS |  Retain Context 2 (0x5583ca9c1380), Refcount: 4
-[2023-10-07 01:59:59.140557356696329]POCL: in fn POclCreateBuffer at line 259:
-  |    MEMORY |  Created Buffer 8 (0x5583ca9cce90), MEM_HOST_PTR: (nil), device_ptrs[0]: (nil), SIZE 256, FLAGS 2 
-[2023-10-07 01:59:59.140733450374188]POCL: in fn POclRetainContext at line 33:
-  | REFCOUNTS |  Retain Context 2 (0x5583ca9c1380), Refcount: 5
-[2023-10-07 01:59:59.140557356731167]POCL: in fn POclCreateBuffer at line 259:
-  |    MEMORY |  Created Buffer 9 (0x5583caa43e20), MEM_HOST_PTR: (nil), device_ptrs[0]: (nil), SIZE 776, FLAGS 2 
-[2023-10-07 01:59:59.140733450406727]POCL: in fn POclRetainContext at line 33:
-  | REFCOUNTS |  Retain Context 2 (0x5583ca9c1380), Refcount: 6
-[2023-10-07 01:59:59.140557356763212]POCL: in fn POclCreateBuffer at line 259:
-  |    MEMORY |  Created Buffer 10 (0x5583ca9ce8c0), MEM_HOST_PTR: (nil), device_ptrs[0]: (nil), SIZE 32, FLAGS 1 
-[2023-10-07 01:59:59.140733450438997]POCL: in fn POclRetainContext at line 33:
-  | REFCOUNTS |  Retain Context 2 (0x5583ca9c1380), Refcount: 7
-[2023-10-07 01:59:59.140557356795308]POCL: in fn POclCreateBuffer at line 259:
-  |    MEMORY |  Created Buffer 11 (0x5583ca9cab80), MEM_HOST_PTR: (nil), device_ptrs[0]: (nil), SIZE 32, FLAGS 1 
-[2023-10-07 01:59:59.140733450470621]POCL: in fn POclRetainContext at line 33:
-  | REFCOUNTS |  Retain Context 2 (0x5583ca9c1380), Refcount: 8
-[2023-10-07 01:59:59.140557357567300]POCL: in fn POclCreateBuffer at line 259:
-  |    MEMORY |  Created Buffer 12 (0x5583ca9cb0a0), MEM_HOST_PTR: (nil), device_ptrs[0]: (nil), SIZE 32, FLAGS 1 
-[2023-10-07 01:59:59.140733451247795]POCL: in fn POclRetainContext at line 33:
-  | REFCOUNTS |  Retain Context 2 (0x5583ca9c1380), Refcount: 9
-[2023-10-07 01:59:59.140557357604843]POCL: in fn POclCreateBuffer at line 259:
-  |    MEMORY |  Created Buffer 13 (0x5583ca9cb280), MEM_HOST_PTR: (nil), device_ptrs[0]: (nil), SIZE 128, FLAGS 1 
-[2023-10-07 01:59:59.140733451280575]POCL: in fn POclRetainContext at line 33:
-  | REFCOUNTS |  Retain Context 2 (0x5583ca9c1380), Refcount: 10
-[2023-10-07 01:59:59.140557357636992]POCL: in fn POclCreateBuffer at line 259:
-  |    MEMORY |  Created Buffer 14 (0x5583ca9ca5c0), MEM_HOST_PTR: (nil), device_ptrs[0]: (nil), SIZE 1, FLAGS 1 
-Warning: the memory at  [0x90000000, 0x900000FF] has been realigned
-to the 4 KiB page size: [0x90000000, 0x90000FFF]
 to allocate at 0x90000000 with 4096 bytes 
-[2023-10-07 01:59:59.257970537]POCL: in fn POclRetainCommandQueue at line 35:
-  | REFCOUNTS |  Retain Command Queue 4 (0x5583ca9c3900), Refcount: 2
-[2023-10-07 01:59:59.140557357715732]POCL: in fn pocl_create_event at line 528:
-  |    EVENTS |  Created event 1 (0x5583ca9d7f10) Command write_buffer
-[2023-10-07 01:59:59.140733451391062]POCL: in fn pocl_create_command_struct at line 649:
-  |    EVENTS |  event pointer provided
-[2023-10-07 01:59:59.258018476]POCL: in fn pocl_create_command_struct at line 672:
-  |    EVENTS |  Created immediate command struct: CMD 0x5583ca9ca7a0 (event 1 / 0x5583ca9d7f10, type: write_buffer)
-[2023-10-07 01:59:59.258035400]POCL: in fn pocl_command_enqueue at line 1191:
-  |    EVENTS |  In-order Q; adding event syncs
-[2023-10-07 01:59:59.258051094]POCL: in fn pocl_command_enqueue at line 1237:
-  |    EVENTS |  Pushed Event 1 to CQ 4.
-[2023-10-07 01:59:59.140733451454656]POCL: in fn pocl_update_event_queued at line 2084:
-  |    EVENTS |  Event queued: 1
-[2023-10-07 01:59:59.258086232]POCL: in fn pocl_update_event_submitted at line 2104:
-  |    EVENTS |  Event submitted: 1
-[2023-10-07 01:59:59.258105665]POCL: in fn pocl_update_event_running_unlocked at line 2123:
-  |    EVENTS |  Event running: 1
 to copy to 0x90000000 with 256 bytes
-[2023-10-07 01:59:59.94021387230059]POCL: in fn pocl_update_event_finished at line 2217:
-  |    EVENTS |  ventus: Command complete, event 1
-[2023-10-07 01:59:59.94021387247386]POCL: in fn pocl_exec_command at line 337:
-  |    TIMING |       >>>        47.666  us    Event Write Buffer          
-[2023-10-07 01:59:59.30322963470]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 8 (0x5583ca9cce90), Refcount: 1
-[2023-10-07 01:59:59.215006583793]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 1 (0x5583ca9d7f10), Refcount: 2
-Warning: the memory at  [0x90001000, 0x90001307] has been realigned
-to the 4 KiB page size: [0x90001000, 0x90001FFF]
 to allocate at 0x90001000 with 4096 bytes 
-[2023-10-07 01:59:59.258260244]POCL: in fn POclRetainCommandQueue at line 35:
-  | REFCOUNTS |  Retain Command Queue 4 (0x5583ca9c3900), Refcount: 3
-[2023-10-07 01:59:59.258275977]POCL: in fn pocl_create_event at line 528:
-  |    EVENTS |  Created event 2 (0x5583ca96b070) Command write_buffer
-[2023-10-07 01:59:59.140733451679434]POCL: in fn pocl_create_command_struct at line 649:
-  |    EVENTS |  event pointer provided
-[2023-10-07 01:59:59.258306374]POCL: in fn pocl_create_command_struct at line 672:
-  |    EVENTS |  Created immediate command struct: CMD 0x5583ca9ccb10 (event 2 / 0x5583ca96b070, type: write_buffer)
-[2023-10-07 01:59:59.258321794]POCL: in fn pocl_command_enqueue at line 1191:
-  |    EVENTS |  In-order Q; adding event syncs
-[2023-10-07 01:59:59.258335867]POCL: in fn pocl_command_enqueue at line 1237:
-  |    EVENTS |  Pushed Event 2 to CQ 4.
-[2023-10-07 01:59:59.140733451751836]POCL: in fn pocl_update_event_queued at line 2084:
-  |    EVENTS |  Event queued: 2
-[2023-10-07 01:59:59.258378912]POCL: in fn pocl_update_event_submitted at line 2104:
-  |    EVENTS |  Event submitted: 2
-[2023-10-07 01:59:59.258397018]POCL: in fn pocl_update_event_running_unlocked at line 2123:
-  |    EVENTS |  Event running: 2
 to copy to 0x90001000 with 776 bytes
-[2023-10-07 01:59:59.94021387495326]POCL: in fn pocl_update_event_finished at line 2217:
-  |    EVENTS |  ventus: Command complete, event 2
-[2023-10-07 01:59:59.94021387511580]POCL: in fn pocl_exec_command at line 337:
-  |    TIMING |       >>>        21.557  us    Event Write Buffer          
-[2023-10-07 01:59:59.30323217238]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 9 (0x5583caa43e20), Refcount: 1
-[2023-10-07 01:59:59.215006826648]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 2 (0x5583ca96b070), Refcount: 2
-Warning: the memory at  [0x90002000, 0x9000201F] has been realigned
-to the 4 KiB page size: [0x90002000, 0x90002FFF]
 to allocate at 0x90002000 with 4096 bytes 
-[2023-10-07 01:59:59.258493994]POCL: in fn POclRetainCommandQueue at line 35:
-  | REFCOUNTS |  Retain Command Queue 4 (0x5583ca9c3900), Refcount: 4
-[2023-10-07 01:59:59.140557358239481]POCL: in fn pocl_create_event at line 528:
-  |    EVENTS |  Created event 3 (0x5583ca9c2940) Command write_buffer
-[2023-10-07 01:59:59.140733451913813]POCL: in fn pocl_create_command_struct at line 649:
-  |    EVENTS |  event pointer provided
-[2023-10-07 01:59:59.258540729]POCL: in fn pocl_create_command_struct at line 672:
-  |    EVENTS |  Created immediate command struct: CMD 0x5583ca9cc9c0 (event 3 / 0x5583ca9c2940, type: write_buffer)
-[2023-10-07 01:59:59.258556279]POCL: in fn pocl_command_enqueue at line 1191:
-  |    EVENTS |  In-order Q; adding event syncs
-[2023-10-07 01:59:59.258571372]POCL: in fn pocl_command_enqueue at line 1237:
-  |    EVENTS |  Pushed Event 3 to CQ 4.
-[2023-10-07 01:59:59.140733451974416]POCL: in fn pocl_update_event_queued at line 2084:
-  |    EVENTS |  Event queued: 3
-[2023-10-07 01:59:59.258601647]POCL: in fn pocl_update_event_submitted at line 2104:
-  |    EVENTS |  Event submitted: 3
-[2023-10-07 01:59:59.258616706]POCL: in fn pocl_update_event_running_unlocked at line 2123:
-  |    EVENTS |  Event running: 3
 to copy to 0x90002000 with 32 bytes
-[2023-10-07 01:59:59.94021387715961]POCL: in fn pocl_update_event_finished at line 2217:
-  |    EVENTS |  ventus: Command complete, event 3
-[2023-10-07 01:59:59.94021387731826]POCL: in fn pocl_exec_command at line 337:
-  |    TIMING |       >>>        22.369  us    Event Write Buffer          
-[2023-10-07 01:59:59.30323443819]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 10 (0x5583ca9ce8c0), Refcount: 1
-[2023-10-07 01:59:59.215007071565]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 3 (0x5583ca9c2940), Refcount: 2
-Warning: the memory at  [0x90003000, 0x9000301F] has been realigned
-to the 4 KiB page size: [0x90003000, 0x90003FFF]
 to allocate at 0x90003000 with 4096 bytes 
-[2023-10-07 01:59:59.258741868]POCL: in fn POclRetainCommandQueue at line 35:
-  | REFCOUNTS |  Retain Command Queue 4 (0x5583ca9c3900), Refcount: 5
-[2023-10-07 01:59:59.140557358486033]POCL: in fn pocl_create_event at line 528:
-  |    EVENTS |  Created event 4 (0x5583ca9b15d0) Command write_buffer
-[2023-10-07 01:59:59.140733452161018]POCL: in fn pocl_create_command_struct at line 649:
-  |    EVENTS |  event pointer provided
-[2023-10-07 01:59:59.258787931]POCL: in fn pocl_create_command_struct at line 672:
-  |    EVENTS |  Created immediate command struct: CMD 0x5583ca9ceaa0 (event 4 / 0x5583ca9b15d0, type: write_buffer)
-[2023-10-07 01:59:59.258803396]POCL: in fn pocl_command_enqueue at line 1191:
-  |    EVENTS |  In-order Q; adding event syncs
-[2023-10-07 01:59:59.258818328]POCL: in fn pocl_command_enqueue at line 1237:
-  |    EVENTS |  Pushed Event 4 to CQ 4.
-[2023-10-07 01:59:59.140733452221171]POCL: in fn pocl_update_event_queued at line 2084:
-  |    EVENTS |  Event queued: 4
-[2023-10-07 01:59:59.258847503]POCL: in fn pocl_update_event_submitted at line 2104:
-  |    EVENTS |  Event submitted: 4
-[2023-10-07 01:59:59.258861793]POCL: in fn pocl_update_event_running_unlocked at line 2123:
-  |    EVENTS |  Event running: 4
 to copy to 0x90003000 with 32 bytes
-[2023-10-07 01:59:59.94021387958480]POCL: in fn pocl_update_event_finished at line 2217:
-  |    EVENTS |  ventus: Command complete, event 4
-[2023-10-07 01:59:59.94021387973124]POCL: in fn pocl_exec_command at line 337:
-  |    TIMING |       >>>        19.859  us    Event Write Buffer          
-[2023-10-07 01:59:59.30323900003]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 11 (0x5583ca9cab80), Refcount: 1
-[2023-10-07 01:59:59.215007510380]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 4 (0x5583ca9b15d0), Refcount: 2
-Warning: the memory at  [0x90004000, 0x9000401F] has been realigned
-to the 4 KiB page size: [0x90004000, 0x90004FFF]
 to allocate at 0x90004000 with 4096 bytes 
-[2023-10-07 01:59:59.259192782]POCL: in fn POclRetainCommandQueue at line 35:
-  | REFCOUNTS |  Retain Command Queue 4 (0x5583ca9c3900), Refcount: 6
-[2023-10-07 01:59:59.140557358946855]POCL: in fn pocl_create_event at line 528:
-  |    EVENTS |  Created event 5 (0x5583ca9ca8b0) Command write_buffer
-[2023-10-07 01:59:59.140733452622693]POCL: in fn pocl_create_command_struct at line 649:
-  |    EVENTS |  event pointer provided
-[2023-10-07 01:59:59.259249674]POCL: in fn pocl_create_command_struct at line 672:
-  |    EVENTS |  Created immediate command struct: CMD 0x5583ca9cad60 (event 5 / 0x5583ca9ca8b0, type: write_buffer)
-[2023-10-07 01:59:59.259265733]POCL: in fn pocl_command_enqueue at line 1191:
-  |    EVENTS |  In-order Q; adding event syncs
-[2023-10-07 01:59:59.259281145]POCL: in fn pocl_command_enqueue at line 1237:
-  |    EVENTS |  Pushed Event 5 to CQ 4.
-[2023-10-07 01:59:59.140733452684395]POCL: in fn pocl_update_event_queued at line 2084:
-  |    EVENTS |  Event queued: 5
-[2023-10-07 01:59:59.259311621]POCL: in fn pocl_update_event_submitted at line 2104:
-  |    EVENTS |  Event submitted: 5
-[2023-10-07 01:59:59.259327087]POCL: in fn pocl_update_event_running_unlocked at line 2123:
-  |    EVENTS |  Event running: 5
 to copy to 0x90004000 with 32 bytes
-[2023-10-07 01:59:59.94021388426477]POCL: in fn pocl_update_event_finished at line 2217:
-  |    EVENTS |  ventus: Command complete, event 5
-[2023-10-07 01:59:59.94021388441942]POCL: in fn pocl_exec_command at line 337:
-  |    TIMING |       >>>        22.659  us    Event Write Buffer          
-[2023-10-07 01:59:59.30324149012]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 12 (0x5583ca9cb0a0), Refcount: 1
-[2023-10-07 01:59:59.215007758253]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 5 (0x5583ca9ca8b0), Refcount: 2
-Warning: the memory at  [0x90005000, 0x9000507F] has been realigned
-to the 4 KiB page size: [0x90005000, 0x90005FFF]
 to allocate at 0x90005000 with 4096 bytes 
-[2023-10-07 01:59:59.259423810]POCL: in fn POclRetainCommandQueue at line 35:
-  | REFCOUNTS |  Retain Command Queue 4 (0x5583ca9c3900), Refcount: 7
-[2023-10-07 01:59:59.259605797]POCL: in fn pocl_create_event at line 528:
-  |    EVENTS |  Created event 6 (0x5583ca9d79d0) Command write_buffer
-[2023-10-07 01:59:59.140733453010883]POCL: in fn pocl_create_command_struct at line 649:
-  |    EVENTS |  event pointer provided
-[2023-10-07 01:59:59.259641046]POCL: in fn pocl_create_command_struct at line 672:
-  |    EVENTS |  Created immediate command struct: CMD 0x5583ca9d78c0 (event 6 / 0x5583ca9d79d0, type: write_buffer)
-[2023-10-07 01:59:59.259665267]POCL: in fn pocl_command_enqueue at line 1191:
-  |    EVENTS |  In-order Q; adding event syncs
-[2023-10-07 01:59:59.259689194]POCL: in fn pocl_command_enqueue at line 1237:
-  |    EVENTS |  Pushed Event 6 to CQ 4.
-[2023-10-07 01:59:59.140733453105298]POCL: in fn pocl_update_event_queued at line 2084:
-  |    EVENTS |  Event queued: 6
-[2023-10-07 01:59:59.259733015]POCL: in fn pocl_update_event_submitted at line 2104:
-  |    EVENTS |  Event submitted: 6
-[2023-10-07 01:59:59.259748645]POCL: in fn pocl_update_event_running_unlocked at line 2123:
-  |    EVENTS |  Event running: 6
 to copy to 0x90005000 with 128 bytes
-[2023-10-07 01:59:59.94021388848182]POCL: in fn pocl_update_event_finished at line 2217:
-  |    EVENTS |  ventus: Command complete, event 6
-[2023-10-07 01:59:59.94021388863783]POCL: in fn pocl_exec_command at line 337:
-  |    TIMING |       >>>        22.796  us    Event Write Buffer          
-[2023-10-07 01:59:59.30324571382]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 13 (0x5583ca9cb280), Refcount: 1
-[2023-10-07 01:59:59.215008181172]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 6 (0x5583ca9d79d0), Refcount: 2
-Warning: the memory at  [0x90006000, 0x90006000] has been realigned
-to the 4 KiB page size: [0x90006000, 0x90006FFF]
 to allocate at 0x90006000 with 4096 bytes 
-[2023-10-07 01:59:59.259849716]POCL: in fn POclRetainCommandQueue at line 35:
-  | REFCOUNTS |  Retain Command Queue 4 (0x5583ca9c3900), Refcount: 8
-[2023-10-07 01:59:59.259865267]POCL: in fn pocl_create_event at line 528:
-  |    EVENTS |  Created event 7 (0x5583ca9d7ad0) Command write_buffer
-[2023-10-07 01:59:59.140733453283956]POCL: in fn pocl_create_command_struct at line 649:
-  |    EVENTS |  event pointer provided
-[2023-10-07 01:59:59.259918642]POCL: in fn pocl_create_command_struct at line 672:
-  |    EVENTS |  Created immediate command struct: CMD 0x5583ca9d78c0 (event 7 / 0x5583ca9d7ad0, type: write_buffer)
-[2023-10-07 01:59:59.259934486]POCL: in fn pocl_command_enqueue at line 1191:
-  |    EVENTS |  In-order Q; adding event syncs
-[2023-10-07 01:59:59.261057404]POCL: in fn pocl_command_enqueue at line 1237:
-  |    EVENTS |  Pushed Event 7 to CQ 4.
-[2023-10-07 01:59:59.140733454470427]POCL: in fn pocl_update_event_queued at line 2084:
-  |    EVENTS |  Event queued: 7
-[2023-10-07 01:59:59.261099172]POCL: in fn pocl_update_event_submitted at line 2104:
-  |    EVENTS |  Event submitted: 7
-[2023-10-07 01:59:59.261124657]POCL: in fn pocl_update_event_running_unlocked at line 2123:
-  |    EVENTS |  Event running: 7
 to copy to 0x90006000 with 1 bytes
-[2023-10-07 01:59:59.94021390236876]POCL: in fn pocl_update_event_finished at line 2217:
-  |    EVENTS |  ventus: Command complete, event 7
-[2023-10-07 01:59:59.94021390252796]POCL: in fn pocl_exec_command at line 337:
-  |    TIMING |       >>>        35.489  us    Event Write Buffer          
-[2023-10-07 01:59:59.30325960817]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 14 (0x5583ca9ca5c0), Refcount: 1
-[2023-10-07 01:59:59.215009570772]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 7 (0x5583ca9d7ad0), Refcount: 2
-[2023-10-07 01:59:59.261225978]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_1 || SetArg idx   0 ||    Node* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9cce90 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  90CE9CCA 83550000
-[2023-10-07 01:59:59.261248412]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_1 || SetArg idx   1 ||     int* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583caa43e20 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  203EA4CA 83550000
-[2023-10-07 01:59:59.261270021]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_1 || SetArg idx   2 ||    char* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9ce8c0 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  C0E89CCA 83550000
-[2023-10-07 01:59:59.261290028]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_1 || SetArg idx   3 ||    char* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9cab80 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  80AB9CCA 83550000
-[2023-10-07 01:59:59.261309912]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_1 || SetArg idx   4 ||    char* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9cb0a0 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  A0B09CCA 83550000
-[2023-10-07 01:59:59.261385342]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_1 || SetArg idx   5 ||     int* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9cb280 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  80B29CCA 83550000
-[2023-10-07 01:59:59.261408533]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_1 || SetArg idx   6 ||      int || Local 0 || Size      4 || Value 0x7fffbf711db8 || Pointer (nil) || *(uint32*)Value:       32 || *(uint64*)Value:        0 ||
-Hex Value:  20000000
-[2023-10-07 01:59:59.172060124355]POCL: in fn pocl_kernel_calc_wg_size at line 173:
-  |   GENERAL |  Preparing kernel BFS_1 with local size 32 x 1 x 1 group sizes 1 x 1 x 1...
-[2023-10-07 01:59:59.261452705]POCL: in fn POclRetainCommandQueue at line 35:
-  | REFCOUNTS |  Retain Command Queue 4 (0x5583ca9c3900), Refcount: 9
-[2023-10-07 01:59:59.261469172]POCL: in fn pocl_create_event at line 528:
-  |    EVENTS |  Created event 8 (0x5583ca9c7bd0) Command ndrange_kernel
-[2023-10-07 01:59:59.140733454872430]POCL: in fn pocl_create_command_struct at line 649:
-  |    EVENTS |  event pointer provided
-[2023-10-07 01:59:59.261498721]POCL: in fn pocl_create_command_struct at line 672:
-  |    EVENTS |  Created immediate command struct: CMD 0x5583ca9d7bf0 (event 8 / 0x5583ca9c7bd0, type: ndrange_kernel)
-[2023-10-07 01:59:59.261514598]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 1 (0x5583ca9d7f10), Refcount: 1
-[2023-10-07 01:59:59.261530218]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 2 (0x5583ca96b070), Refcount: 1
-[2023-10-07 01:59:59.261545363]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 3 (0x5583ca9c2940), Refcount: 1
-[2023-10-07 01:59:59.261559883]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 4 (0x5583ca9b15d0), Refcount: 1
-[2023-10-07 01:59:59.261577207]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 5 (0x5583ca9ca8b0), Refcount: 1
-[2023-10-07 01:59:59.261594440]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 6 (0x5583ca9d79d0), Refcount: 1
-[2023-10-07 01:59:59.261621573]POCL: in fn POclRetainKernel at line 34:
-  | REFCOUNTS |  Retain Kernel BFS_1 (0x5583ca9c9c60), Refcount: 2
-[2023-10-07 01:59:59.261650818]POCL: in fn pocl_command_enqueue at line 1191:
-  |    EVENTS |  In-order Q; adding event syncs
-[2023-10-07 01:59:59.261666670]POCL: in fn pocl_command_enqueue at line 1237:
-  |    EVENTS |  Pushed Event 8 to CQ 4.
-[2023-10-07 01:59:59.140733455070140]POCL: in fn pocl_update_event_queued at line 2084:
-  |    EVENTS |  Event queued: 8
-[2023-10-07 01:59:59.261706721]POCL: in fn pocl_update_event_submitted at line 2104:
-  |    EVENTS |  Event submitted: 8
-[2023-10-07 01:59:59.261722435]POCL: in fn pocl_update_event_running_unlocked at line 2123:
-  |    EVENTS |  Event running: 8
 notice that ventus hasn't support local buffer as argument yet.
-[2023-10-07 01:59:59.262222157]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 608:
-  |    VENTUS |  Allocating kernel arg buffer entry:
-Warning: the memory at  [0x90007000, 0x9000701B] has been realigned
-to the 4 KiB page size: [0x90007000, 0x90007FFF]
 to allocate at 0x90007000 with 4096 bytes 
 to copy to 0x90007000 with 28 bytes
-[2023-10-07 01:59:59.140557386484248]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 662:
-  |    VENTUS |  Kernel entry of "BFS_1" is : "0x800000a8"
-[2023-10-07 02:00:00.031449408]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 685:
-  |    VENTUS |  Vmem file has been written to object.vmem
-[2023-10-07 02:00:00.031711222]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 731:
-  |    VENTUS |  Preparing private memory of ventus:
 to allocate at 0x90008000 with 131072 bytes 
-[2023-10-07 02:00:00.031742565]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 766:
-  |    VENTUS |  Allocating metadata space:
-Warning: the memory at  [0x90028000, 0x9002803F] has been realigned
-to the 4 KiB page size: [0x90028000, 0x90028FFF]
 to allocate at 0x90028000 with 4096 bytes 
 to copy to 0x90028000 with 64 bytes
-[2023-10-07 02:00:00.031782105]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 776:
-  |    VENTUS |  kernel metadata has been written to 0x90028000
-arg gpgpu is numw:1,numt:32,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x20000,pdsbase:0x90008000,knlbase:0x90028000
+arg gpgpu is numw:4,numt:8,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x8000,pdsbase:0x90008000,knlbase:0x90028000
 vaddr mem scope is -m0x70000000:0x90029000
 src file is object.riscv, run log is written to object.riscv.log
-spike -l --log-commits -p1 --isa rv32gcv_zfh --pc=0x80000000 -m0x70000000:0x90029000 --varch vlen:1024,elen:32 --gpgpuarch numw:1,numt:32,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x20000,pdsbase:0x90008000,knlbase:0x90028000 --log=object.riscv.log object.riscv 
-warp number: 1 thread number = 32  workgroup number = 1 workgroup dimension:1*1*1 lds size: 1000 pds size: 20000 lds base: 70000000 pds base: 90008000 knl base: 90028000
+spike -l --log-commits -p4 --isa rv32gcv_zfh --pc=0x80000000 -m0x70000000:0x90029000 --varch vlen:256,elen:32 --gpgpuarch numw:4,numt:8,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x8000,pdsbase:0x90008000,knlbase:0x90028000 --log=object.riscv.log object.riscv 
+warp number: 4 thread number = 8  workgroup number = 1 workgroup dimension:1*1*1 lds size: 1000 pds size: 8000 lds base: 70000000 pds base: 90008000 knl base: 90028000
 all warps reach the endprg. now proc 0 will end the simulation.
 Log file object.riscv.log renamed successfully to BFS_1_0.log.
-[2023-10-07 02:00:00.044023104]POCL: in fn pocl_update_event_finished at line 2217:
-  |    EVENTS |  ventus: Command complete, event 8
-[2023-10-07 02:00:00.94021173120835]POCL: in fn pocl_exec_command at line 609:
-  |    TIMING |       >>>       782.282  ms    Event Enqueue NDRange       
-[2023-10-07 02:00:00.94021173130423]POCL: in fn POclReleaseKernel at line 39:
-  | REFCOUNTS |  Release Kernel BFS_1 (0x5583ca9c9c60), Refcount: 1
-[2023-10-07 02:00:00.140733237458614]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 8 (0x5583ca9cce90), Refcount: 1
-[2023-10-07 02:00:00.044084343]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 9 (0x5583caa43e20), Refcount: 1
-[2023-10-07 02:00:00.044097413]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 10 (0x5583ca9ce8c0), Refcount: 1
-[2023-10-07 02:00:00.044104102]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 11 (0x5583ca9cab80), Refcount: 1
-[2023-10-07 02:00:00.044117677]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 12 (0x5583ca9cb0a0), Refcount: 1
-[2023-10-07 02:00:00.044128022]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 13 (0x5583ca9cb280), Refcount: 1
-[2023-10-07 02:00:00.214792506048]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 8 (0x5583ca9c7bd0), Refcount: 7
-[2023-10-07 02:00:00.94021173234140]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_2 || SetArg idx   0 ||    char* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9ce8c0 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  C0E89CCA 83550000
-[2023-10-07 02:00:00.044172138]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_2 || SetArg idx   1 ||    char* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9cab80 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  80AB9CCA 83550000
-[2023-10-07 02:00:00.044183523]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_2 || SetArg idx   2 ||    char* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9cb0a0 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  A0B09CCA 83550000
-[2023-10-07 02:00:00.044191209]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_2 || SetArg idx   3 ||    char* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9ca5c0 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  C0A59CCA 83550000
-[2023-10-07 02:00:00.044208562]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_2 || SetArg idx   4 ||      int || Local 0 || Size      4 || Value 0x7fffbf711db8 || Pointer (nil) || *(uint32*)Value:       32 || *(uint64*)Value:        0 ||
-Hex Value:  20000000
-[2023-10-07 02:00:00.044228332]POCL: in fn pocl_kernel_calc_wg_size at line 173:
-  |   GENERAL |  Preparing kernel BFS_2 with local size 32 x 1 x 1 group sizes 1 x 1 x 1...
-[2023-10-07 02:00:00.044243713]POCL: in fn POclRetainCommandQueue at line 35:
-  | REFCOUNTS |  Retain Command Queue 4 (0x5583ca9c3900), Refcount: 10
-[2023-10-07 02:00:00.140557143980369]POCL: in fn pocl_create_event at line 528:
-  |    EVENTS |  Created event 9 (0x5583cad5bfe0) Command ndrange_kernel
-[2023-10-07 02:00:00.140733237647550]POCL: in fn pocl_create_command_struct at line 649:
-  |    EVENTS |  event pointer provided
-[2023-10-07 02:00:00.044263010]POCL: in fn pocl_create_command_struct at line 672:
-  |    EVENTS |  Created immediate command struct: CMD 0x5583cad5bed0 (event 9 / 0x5583cad5bfe0, type: ndrange_kernel)
-[2023-10-07 02:00:00.044274788]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 8 (0x5583ca9c7bd0), Refcount: 6
-[2023-10-07 02:00:00.044281433]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 8 (0x5583ca9c7bd0), Refcount: 5
-[2023-10-07 02:00:00.044287984]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 8 (0x5583ca9c7bd0), Refcount: 4
-[2023-10-07 02:00:00.044303588]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 7 (0x5583ca9d7ad0), Refcount: 1
-[2023-10-07 02:00:00.044313381]POCL: in fn POclRetainKernel at line 34:
-  | REFCOUNTS |  Retain Kernel BFS_2 (0x5583ca9ccdb0), Refcount: 2
-[2023-10-07 02:00:00.044338127]POCL: in fn pocl_command_enqueue at line 1191:
-  |    EVENTS |  In-order Q; adding event syncs
-[2023-10-07 02:00:00.044348663]POCL: in fn pocl_command_enqueue at line 1237:
-  |    EVENTS |  Pushed Event 9 to CQ 4.
-[2023-10-07 02:00:00.140733237756023]POCL: in fn pocl_update_event_queued at line 2084:
-  |    EVENTS |  Event queued: 9
-[2023-10-07 02:00:00.044372037]POCL: in fn pocl_update_event_submitted at line 2104:
-  |    EVENTS |  Event submitted: 9
-[2023-10-07 02:00:00.044379722]POCL: in fn pocl_update_event_running_unlocked at line 2123:
-  |    EVENTS |  Event running: 9
 notice that ventus hasn't support local buffer as argument yet.
-[2023-10-07 02:00:00.044433242]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 608:
-  |    VENTUS |  Allocating kernel arg buffer entry:
-Warning: the memory at  [0x90029000, 0x90029013] has been realigned
-to the 4 KiB page size: [0x90029000, 0x90029FFF]
 to allocate at 0x90029000 with 4096 bytes 
 to copy to 0x90029000 with 20 bytes
-[2023-10-07 02:00:00.140557165048678]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 662:
-  |    VENTUS |  Kernel entry of "BFS_2" is : "0x800001c8"
-[2023-10-07 02:00:00.764071220]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 685:
-  |    VENTUS |  Vmem file has been written to object.vmem
-[2023-10-07 02:00:00.764261618]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 731:
-  |    VENTUS |  Preparing private memory of ventus:
 to allocate at 0x9002a000 with 131072 bytes 
-[2023-10-07 02:00:00.764288296]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 766:
-  |    VENTUS |  Allocating metadata space:
-Warning: the memory at  [0x9004A000, 0x9004A03F] has been realigned
-to the 4 KiB page size: [0x9004A000, 0x9004AFFF]
 to allocate at 0x9004a000 with 4096 bytes 
 to copy to 0x9004a000 with 64 bytes
-[2023-10-07 02:00:00.764327932]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 776:
-  |    VENTUS |  kernel metadata has been written to 0x9004a000
-arg gpgpu is numw:1,numt:32,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x20000,pdsbase:0x9002a000,knlbase:0x9004a000
+arg gpgpu is numw:4,numt:8,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x8000,pdsbase:0x9002a000,knlbase:0x9004a000
 vaddr mem scope is -m0x70000000:0x9004b000
 src file is object.riscv, run log is written to object.riscv.log
-spike -l --log-commits -p1 --isa rv32gcv_zfh --pc=0x80000000 -m0x70000000:0x9004b000 --varch vlen:1024,elen:32 --gpgpuarch numw:1,numt:32,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x20000,pdsbase:0x9002a000,knlbase:0x9004a000 --log=object.riscv.log object.riscv 
-warp number: 1 thread number = 20  workgroup number = 1 workgroup dimension:1*1*1 lds size: 1000 pds size: 20000 lds base: 70000000 pds base: 9002a000 knl base: 9004a000
+spike -l --log-commits -p4 --isa rv32gcv_zfh --pc=0x80000000 -m0x70000000:0x9004b000 --varch vlen:256,elen:32 --gpgpuarch numw:4,numt:8,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x8000,pdsbase:0x9002a000,knlbase:0x9004a000 --log=object.riscv.log object.riscv 
+warp number: 4 thread number = 8  workgroup number = 1 workgroup dimension:1*1*1 lds size: 1000 pds size: 8000 lds base: 70000000 pds base: 9002a000 knl base: 9004a000
 all warps reach the endprg. now proc 0 will end the simulation.
 Log file object.riscv.log renamed successfully to BFS_2_0.log.
-[2023-10-07 02:00:00.772796221]POCL: in fn pocl_update_event_finished at line 2217:
-  |    EVENTS |  ventus: Command complete, event 9
-[2023-10-07 02:00:00.94021901895908]POCL: in fn pocl_exec_command at line 609:
-  |    TIMING |       >>>       728.399  ms    Event Enqueue NDRange       
-[2023-10-07 02:00:00.94021901916597]POCL: in fn POclReleaseKernel at line 39:
-  | REFCOUNTS |  Release Kernel BFS_2 (0x5583ca9ccdb0), Refcount: 1
-[2023-10-07 02:00:00.140733966248286]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 10 (0x5583ca9ce8c0), Refcount: 1
-[2023-10-07 02:00:00.772877532]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 11 (0x5583ca9cab80), Refcount: 1
-[2023-10-07 02:00:00.772894507]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 12 (0x5583ca9cb0a0), Refcount: 1
-[2023-10-07 02:00:00.772910162]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 14 (0x5583ca9ca5c0), Refcount: 1
-[2023-10-07 02:00:00.215521307862]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 9 (0x5583cad5bfe0), Refcount: 5
-[2023-10-07 02:00:00.772971222]POCL: in fn POclRetainCommandQueue at line 35:
-  | REFCOUNTS |  Retain Command Queue 4 (0x5583ca9c3900), Refcount: 11
-[2023-10-07 02:00:00.140557872716570]POCL: in fn pocl_create_event at line 528:
-  |    EVENTS |  Created event 10 (0x5583caeba7b0) Command read_buffer
-[2023-10-07 02:00:00.140733966392895]POCL: in fn pocl_create_command_struct at line 649:
-  |    EVENTS |  event pointer provided
-[2023-10-07 02:00:00.773022816]POCL: in fn pocl_create_command_struct at line 672:
-  |    EVENTS |  Created immediate command struct: CMD 0x5583caeba6a0 (event 10 / 0x5583caeba7b0, type: read_buffer)
-[2023-10-07 02:00:00.773040208]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 9 (0x5583cad5bfe0), Refcount: 4
-[2023-10-07 02:00:00.773056197]POCL: in fn pocl_command_enqueue at line 1191:
-  |    EVENTS |  In-order Q; adding event syncs
-[2023-10-07 02:00:00.773071682]POCL: in fn pocl_command_enqueue at line 1237:
-  |    EVENTS |  Pushed Event 10 to CQ 4.
-[2023-10-07 02:00:00.140733966475656]POCL: in fn pocl_update_event_queued at line 2084:
-  |    EVENTS |  Event queued: 10
-[2023-10-07 02:00:00.773103479]POCL: in fn pocl_update_event_submitted at line 2104:
-  |    EVENTS |  Event submitted: 10
-[2023-10-07 02:00:00.172571811353]POCL: in fn pocl_update_event_running_unlocked at line 2123:
-  |    EVENTS |  Event running: 10
 to copy from 0x90006000 with 1 bytes
-[2023-10-07 02:00:00.773155948]POCL: in fn pocl_update_event_finished at line 2217:
-  |    EVENTS |  ventus: Command complete, event 10
-[2023-10-07 02:00:00.94021902248207]POCL: in fn pocl_exec_command at line 324:
-  |    TIMING |       >>>        36.441  us    Event Read Buffer           
-[2023-10-07 02:00:00.30837955914]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 14 (0x5583ca9ca5c0), Refcount: 1
-[2023-10-07 02:00:00.215521565403]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 10 (0x5583caeba7b0), Refcount: 2
-[2023-10-07 02:00:00.773226788]POCL: in fn POclRetainCommandQueue at line 35:
-  | REFCOUNTS |  Retain Command Queue 4 (0x5583ca9c3900), Refcount: 12
-[2023-10-07 02:00:00.140557872981821]POCL: in fn pocl_create_event at line 528:
-  |    EVENTS |  Created event 11 (0x5583caeb9ba0) Command write_buffer
-[2023-10-07 02:00:00.140733966658795]POCL: in fn pocl_create_command_struct at line 649:
-  |    EVENTS |  event pointer provided
-[2023-10-07 02:00:00.773285862]POCL: in fn pocl_create_command_struct at line 672:
-  |    EVENTS |  Created immediate command struct: CMD 0x5583caeb9a90 (event 11 / 0x5583caeb9ba0, type: write_buffer)
-[2023-10-07 02:00:00.773301494]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 10 (0x5583caeba7b0), Refcount: 1
-[2023-10-07 02:00:00.773316900]POCL: in fn pocl_command_enqueue at line 1191:
-  |    EVENTS |  In-order Q; adding event syncs
-[2023-10-07 02:00:00.773332100]POCL: in fn pocl_command_enqueue at line 1237:
-  |    EVENTS |  Pushed Event 11 to CQ 4.
-[2023-10-07 02:00:00.140733966735330]POCL: in fn pocl_update_event_queued at line 2084:
-  |    EVENTS |  Event queued: 11
-[2023-10-07 02:00:00.773362461]POCL: in fn pocl_update_event_submitted at line 2104:
-  |    EVENTS |  Event submitted: 11
-[2023-10-07 02:00:00.172572069594]POCL: in fn pocl_update_event_running_unlocked at line 2123:
-  |    EVENTS |  Event running: 11
 to copy to 0x90006000 with 1 bytes
-[2023-10-07 02:00:00.94021902475486]POCL: in fn pocl_update_event_finished at line 2217:
-  |    EVENTS |  ventus: Command complete, event 11
-[2023-10-07 02:00:00.94021902490909]POCL: in fn pocl_exec_command at line 337:
-  |    TIMING |       >>>        20.975  us    Event Write Buffer          
-[2023-10-07 02:00:00.30838197831]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 14 (0x5583ca9ca5c0), Refcount: 1
-[2023-10-07 02:00:00.215521806859]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 11 (0x5583caeb9ba0), Refcount: 2
-[2023-10-07 02:00:00.140733966847499]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_1 || SetArg idx   0 ||    Node* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9cce90 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  90CE9CCA 83550000
-[2023-10-07 02:00:00.773482751]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_1 || SetArg idx   1 ||     int* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583caa43e20 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  203EA4CA 83550000
-[2023-10-07 02:00:00.773503183]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_1 || SetArg idx   2 ||    char* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9ce8c0 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  C0E89CCA 83550000
-[2023-10-07 02:00:00.773523076]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_1 || SetArg idx   3 ||    char* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9cab80 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  80AB9CCA 83550000
-[2023-10-07 02:00:00.773542887]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_1 || SetArg idx   4 ||    char* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9cb0a0 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  A0B09CCA 83550000
-[2023-10-07 02:00:00.773562856]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_1 || SetArg idx   5 ||     int* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9cb280 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  80B29CCA 83550000
-[2023-10-07 02:00:00.773581947]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_1 || SetArg idx   6 ||      int || Local 0 || Size      4 || Value 0x7fffbf711db8 || Pointer (nil) || *(uint32*)Value:       32 || *(uint64*)Value:        0 ||
-Hex Value:  20000000
-[2023-10-07 02:00:00.172572295212]POCL: in fn pocl_kernel_calc_wg_size at line 173:
-  |   GENERAL |  Preparing kernel BFS_1 with local size 32 x 1 x 1 group sizes 1 x 1 x 1...
-[2023-10-07 02:00:00.140557873350263]POCL: in fn POclRetainCommandQueue at line 35:
-  | REFCOUNTS |  Retain Command Queue 4 (0x5583ca9c3900), Refcount: 13
-[2023-10-07 02:00:00.140557873365313]POCL: in fn pocl_create_event at line 528:
-  |    EVENTS |  Created event 12 (0x5583caeb9c80) Command ndrange_kernel
-[2023-10-07 02:00:00.140733967039021]POCL: in fn pocl_create_command_struct at line 649:
-  |    EVENTS |  event pointer provided
-[2023-10-07 02:00:00.773665230]POCL: in fn pocl_create_command_struct at line 672:
-  |    EVENTS |  Created immediate command struct: CMD 0x5583caebbf50 (event 12 / 0x5583caeb9c80, type: ndrange_kernel)
-[2023-10-07 02:00:00.773680582]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 8 (0x5583ca9c7bd0), Refcount: 3
-[2023-10-07 02:00:00.773698250]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 8 (0x5583ca9c7bd0), Refcount: 2
-[2023-10-07 02:00:00.773732245]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 9 (0x5583cad5bfe0), Refcount: 3
-[2023-10-07 02:00:00.773752252]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 9 (0x5583cad5bfe0), Refcount: 2
-[2023-10-07 02:00:00.773766728]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 9 (0x5583cad5bfe0), Refcount: 1
-[2023-10-07 02:00:00.773781229]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 8 (0x5583ca9c7bd0), Refcount: 1
-[2023-10-07 02:00:00.773797483]POCL: in fn POclRetainKernel at line 34:
-  | REFCOUNTS |  Retain Kernel BFS_1 (0x5583ca9c9c60), Refcount: 2
-[2023-10-07 02:00:00.773815450]POCL: in fn pocl_command_enqueue at line 1191:
-  |    EVENTS |  In-order Q; adding event syncs
-[2023-10-07 02:00:00.773830149]POCL: in fn pocl_command_enqueue at line 1237:
-  |    EVENTS |  Pushed Event 12 to CQ 4.
-[2023-10-07 02:00:00.140733967232548]POCL: in fn pocl_update_event_queued at line 2084:
-  |    EVENTS |  Event queued: 12
-[2023-10-07 02:00:00.773859026]POCL: in fn pocl_update_event_submitted at line 2104:
-  |    EVENTS |  Event submitted: 12
-[2023-10-07 02:00:00.773874219]POCL: in fn pocl_update_event_running_unlocked at line 2123:
-  |    EVENTS |  Event running: 12
 notice that ventus hasn't support local buffer as argument yet.
-[2023-10-07 02:00:00.94021903004204]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 608:
-  |    VENTUS |  Allocating kernel arg buffer entry:
-Warning: the memory at  [0x9004B000, 0x9004B01B] has been realigned
-to the 4 KiB page size: [0x9004B000, 0x9004BFFF]
 to allocate at 0x9004b000 with 4096 bytes 
 to copy to 0x9004b000 with 28 bytes
-[2023-10-07 02:00:00.140557893045568]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 662:
-  |    VENTUS |  Kernel entry of "BFS_1" is : "0x800000a8"
-[2023-10-07 02:00:01.495446561]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 685:
-  |    VENTUS |  Vmem file has been written to object.vmem
-[2023-10-07 02:00:01.496037350]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 731:
-  |    VENTUS |  Preparing private memory of ventus:
 to allocate at 0x9004c000 with 131072 bytes 
-[2023-10-07 02:00:01.496065237]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 766:
-  |    VENTUS |  Allocating metadata space:
-Warning: the memory at  [0x9006C000, 0x9006C03F] has been realigned
-to the 4 KiB page size: [0x9006C000, 0x9006CFFF]
 to allocate at 0x9006c000 with 4096 bytes 
 to copy to 0x9006c000 with 64 bytes
-[2023-10-07 02:00:01.496105596]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 776:
-  |    VENTUS |  kernel metadata has been written to 0x9006c000
-arg gpgpu is numw:1,numt:32,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x20000,pdsbase:0x9004c000,knlbase:0x9006c000
+arg gpgpu is numw:4,numt:8,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x8000,pdsbase:0x9004c000,knlbase:0x9006c000
 vaddr mem scope is -m0x70000000:0x9006d000
 src file is object.riscv, run log is written to object.riscv.log
-spike -l --log-commits -p1 --isa rv32gcv_zfh --pc=0x80000000 -m0x70000000:0x9006d000 --varch vlen:1024,elen:32 --gpgpuarch numw:1,numt:32,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x20000,pdsbase:0x9004c000,knlbase:0x9006c000 --log=object.riscv.log object.riscv 
-warp number: 1 thread number = 20  workgroup number = 1 workgroup dimension:1*1*1 lds size: 1000 pds size: 20000 lds base: 70000000 pds base: 9004c000 knl base: 9006c000
+spike -l --log-commits -p4 --isa rv32gcv_zfh --pc=0x80000000 -m0x70000000:0x9006d000 --varch vlen:256,elen:32 --gpgpuarch numw:4,numt:8,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x8000,pdsbase:0x9004c000,knlbase:0x9006c000 --log=object.riscv.log object.riscv 
+warp number: 4 thread number = 8  workgroup number = 1 workgroup dimension:1*1*1 lds size: 1000 pds size: 8000 lds base: 70000000 pds base: 9004c000 knl base: 9006c000
 all warps reach the endprg. now proc 0 will end the simulation.
 Log file object.riscv.log renamed successfully to BFS_1_1.log.
-[2023-10-07 02:00:01.505978322]POCL: in fn pocl_update_event_finished at line 2217:
-  |    EVENTS |  ventus: Command complete, event 12
-[2023-10-07 02:00:01.94021635081235]POCL: in fn pocl_exec_command at line 609:
-  |    TIMING |       >>>       732.086  ms    Event Enqueue NDRange       
-[2023-10-07 02:00:01.94021635106950]POCL: in fn POclReleaseKernel at line 39:
-  | REFCOUNTS |  Release Kernel BFS_1 (0x5583ca9c9c60), Refcount: 1
-[2023-10-07 02:00:01.140733699448447]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 8 (0x5583ca9cce90), Refcount: 1
-[2023-10-07 02:00:01.506085732]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 9 (0x5583caa43e20), Refcount: 1
-[2023-10-07 02:00:01.506109200]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 10 (0x5583ca9ce8c0), Refcount: 1
-[2023-10-07 02:00:01.506131542]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 11 (0x5583ca9cab80), Refcount: 1
-[2023-10-07 02:00:01.506153080]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 12 (0x5583ca9cb0a0), Refcount: 1
-[2023-10-07 02:00:01.506176284]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 13 (0x5583ca9cb280), Refcount: 1
-[2023-10-07 02:00:01.215254563896]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 12 (0x5583caeb9c80), Refcount: 7
-[2023-10-07 02:00:01.94021635304076]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_2 || SetArg idx   0 ||    char* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9ce8c0 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  C0E89CCA 83550000
-[2023-10-07 02:00:01.506291983]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_2 || SetArg idx   1 ||    char* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9cab80 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  80AB9CCA 83550000
-[2023-10-07 02:00:01.506321947]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_2 || SetArg idx   2 ||    char* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9cb0a0 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  A0B09CCA 83550000
-[2023-10-07 02:00:01.506433665]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_2 || SetArg idx   3 ||    char* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9ca5c0 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  C0A59CCA 83550000
-[2023-10-07 02:00:01.506457440]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_2 || SetArg idx   4 ||      int || Local 0 || Size      4 || Value 0x7fffbf711db8 || Pointer (nil) || *(uint32*)Value:       32 || *(uint64*)Value:        0 ||
-Hex Value:  20000000
-[2023-10-07 02:00:01.506480560]POCL: in fn pocl_kernel_calc_wg_size at line 173:
-  |   GENERAL |  Preparing kernel BFS_2 with local size 32 x 1 x 1 group sizes 1 x 1 x 1...
-[2023-10-07 02:00:01.506502310]POCL: in fn POclRetainCommandQueue at line 35:
-  | REFCOUNTS |  Retain Command Queue 4 (0x5583ca9c3900), Refcount: 14
-[2023-10-07 02:00:01.140557606255197]POCL: in fn pocl_create_event at line 528:
-  |    EVENTS |  Created event 13 (0x5583ca9d3f50) Command ndrange_kernel
-[2023-10-07 02:00:01.140733699938425]POCL: in fn pocl_create_command_struct at line 649:
-  |    EVENTS |  event pointer provided
-[2023-10-07 02:00:01.506573105]POCL: in fn pocl_create_command_struct at line 672:
-  |    EVENTS |  Created immediate command struct: CMD 0x5583ca9d3e40 (event 13 / 0x5583ca9d3f50, type: ndrange_kernel)
-[2023-10-07 02:00:01.506598160]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 12 (0x5583caeb9c80), Refcount: 6
-[2023-10-07 02:00:01.506619214]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 12 (0x5583caeb9c80), Refcount: 5
-[2023-10-07 02:00:01.506642117]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 12 (0x5583caeb9c80), Refcount: 4
-[2023-10-07 02:00:01.506665324]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 11 (0x5583caeb9ba0), Refcount: 1
-[2023-10-07 02:00:01.506690032]POCL: in fn POclRetainKernel at line 34:
-  | REFCOUNTS |  Retain Kernel BFS_2 (0x5583ca9ccdb0), Refcount: 2
-[2023-10-07 02:00:01.506727160]POCL: in fn pocl_command_enqueue at line 1191:
-  |    EVENTS |  In-order Q; adding event syncs
-[2023-10-07 02:00:01.506751961]POCL: in fn pocl_command_enqueue at line 1237:
-  |    EVENTS |  Pushed Event 13 to CQ 4.
-[2023-10-07 02:00:01.140733700164319]POCL: in fn pocl_update_event_queued at line 2084:
-  |    EVENTS |  Event queued: 13
-[2023-10-07 02:00:01.506800876]POCL: in fn pocl_update_event_submitted at line 2104:
-  |    EVENTS |  Event submitted: 13
-[2023-10-07 02:00:01.506826269]POCL: in fn pocl_update_event_running_unlocked at line 2123:
-  |    EVENTS |  Event running: 13
 notice that ventus hasn't support local buffer as argument yet.
-[2023-10-07 02:00:01.94021636015580]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 608:
-  |    VENTUS |  Allocating kernel arg buffer entry:
-Warning: the memory at  [0x9006D000, 0x9006D013] has been realigned
-to the 4 KiB page size: [0x9006D000, 0x9006DFFF]
 to allocate at 0x9006d000 with 4096 bytes 
 to copy to 0x9006d000 with 20 bytes
-[2023-10-07 02:00:01.140557623580603]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 662:
-  |    VENTUS |  Kernel entry of "BFS_2" is : "0x800001c8"
-[2023-10-07 02:00:02.229124144]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 685:
-  |    VENTUS |  Vmem file has been written to object.vmem
-[2023-10-07 02:00:02.229729449]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 731:
-  |    VENTUS |  Preparing private memory of ventus:
 to allocate at 0x9006e000 with 131072 bytes 
-[2023-10-07 02:00:02.229759458]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 766:
-  |    VENTUS |  Allocating metadata space:
-Warning: the memory at  [0x9008E000, 0x9008E03F] has been realigned
-to the 4 KiB page size: [0x9008E000, 0x9008EFFF]
 to allocate at 0x9008e000 with 4096 bytes 
 to copy to 0x9008e000 with 64 bytes
-[2023-10-07 02:00:02.229799673]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 776:
-  |    VENTUS |  kernel metadata has been written to 0x9008e000
-arg gpgpu is numw:1,numt:32,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x20000,pdsbase:0x9006e000,knlbase:0x9008e000
+arg gpgpu is numw:4,numt:8,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x8000,pdsbase:0x9006e000,knlbase:0x9008e000
 vaddr mem scope is -m0x70000000:0x9008f000
 src file is object.riscv, run log is written to object.riscv.log
-spike -l --log-commits -p1 --isa rv32gcv_zfh --pc=0x80000000 -m0x70000000:0x9008f000 --varch vlen:1024,elen:32 --gpgpuarch numw:1,numt:32,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x20000,pdsbase:0x9006e000,knlbase:0x9008e000 --log=object.riscv.log object.riscv 
-warp number: 1 thread number = 20  workgroup number = 1 workgroup dimension:1*1*1 lds size: 1000 pds size: 20000 lds base: 70000000 pds base: 9006e000 knl base: 9008e000
+spike -l --log-commits -p4 --isa rv32gcv_zfh --pc=0x80000000 -m0x70000000:0x9008f000 --varch vlen:256,elen:32 --gpgpuarch numw:4,numt:8,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x8000,pdsbase:0x9006e000,knlbase:0x9008e000 --log=object.riscv.log object.riscv 
+warp number: 4 thread number = 8  workgroup number = 1 workgroup dimension:1*1*1 lds size: 1000 pds size: 8000 lds base: 70000000 pds base: 9006e000 knl base: 9008e000
 all warps reach the endprg. now proc 0 will end the simulation.
 Log file object.riscv.log renamed successfully to BFS_2_1.log.
-[2023-10-07 02:00:02.240848121]POCL: in fn pocl_update_event_finished at line 2217:
-  |    EVENTS |  ventus: Command complete, event 13
-[2023-10-07 02:00:02.94021369949908]POCL: in fn pocl_exec_command at line 609:
-  |    TIMING |       >>>       734.004  ms    Event Enqueue NDRange       
-[2023-10-07 02:00:02.94021369969484]POCL: in fn POclReleaseKernel at line 39:
-  | REFCOUNTS |  Release Kernel BFS_2 (0x5583ca9ccdb0), Refcount: 1
-[2023-10-07 02:00:02.140733434300425]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 10 (0x5583ca9ce8c0), Refcount: 1
-[2023-10-07 02:00:02.240930712]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 11 (0x5583ca9cab80), Refcount: 1
-[2023-10-07 02:00:02.240948353]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 12 (0x5583ca9cb0a0), Refcount: 1
-[2023-10-07 02:00:02.240964425]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 14 (0x5583ca9ca5c0), Refcount: 1
-[2023-10-07 02:00:02.214989363275]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 13 (0x5583ca9d3f50), Refcount: 5
-[2023-10-07 02:00:02.241028405]POCL: in fn POclRetainCommandQueue at line 35:
-  | REFCOUNTS |  Retain Command Queue 4 (0x5583ca9c3900), Refcount: 15
-[2023-10-07 02:00:02.140557340778678]POCL: in fn pocl_create_event at line 528:
-  |    EVENTS |  Created event 14 (0x5583cb175100) Command read_buffer
-[2023-10-07 02:00:02.140733434451533]POCL: in fn pocl_create_command_struct at line 649:
-  |    EVENTS |  event pointer provided
-[2023-10-07 02:00:02.241075676]POCL: in fn pocl_create_command_struct at line 672:
-  |    EVENTS |  Created immediate command struct: CMD 0x5583cb174ff0 (event 14 / 0x5583cb175100, type: read_buffer)
-[2023-10-07 02:00:02.241090001]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 13 (0x5583ca9d3f50), Refcount: 4
-[2023-10-07 02:00:02.241102345]POCL: in fn pocl_command_enqueue at line 1191:
-  |    EVENTS |  In-order Q; adding event syncs
-[2023-10-07 02:00:02.241114696]POCL: in fn pocl_command_enqueue at line 1237:
-  |    EVENTS |  Pushed Event 14 to CQ 4.
-[2023-10-07 02:00:02.140733434519202]POCL: in fn pocl_update_event_queued at line 2084:
-  |    EVENTS |  Event queued: 14
-[2023-10-07 02:00:02.241148120]POCL: in fn pocl_update_event_submitted at line 2104:
-  |    EVENTS |  Event submitted: 14
-[2023-10-07 02:00:02.172039853319]POCL: in fn pocl_update_event_running_unlocked at line 2123:
-  |    EVENTS |  Event running: 14
 to copy from 0x90006000 with 1 bytes
-[2023-10-07 02:00:02.241180237]POCL: in fn pocl_update_event_finished at line 2217:
-  |    EVENTS |  ventus: Command complete, event 14
-[2023-10-07 02:00:02.94021370273764]POCL: in fn pocl_exec_command at line 324:
-  |    TIMING |       >>>        18.759  us    Event Read Buffer           
-[2023-10-07 02:00:02.30305980592]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 14 (0x5583ca9ca5c0), Refcount: 1
-[2023-10-07 02:00:02.214989587151]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 14 (0x5583cb175100), Refcount: 2
-[2023-10-07 02:00:02.241237075]POCL: in fn POclRetainCommandQueue at line 35:
-  | REFCOUNTS |  Retain Command Queue 4 (0x5583ca9c3900), Refcount: 16
-[2023-10-07 02:00:02.140557340978212]POCL: in fn pocl_create_event at line 528:
-  |    EVENTS |  Created event 15 (0x5583cb1744c0) Command write_buffer
-[2023-10-07 02:00:02.140733434653607]POCL: in fn pocl_create_command_struct at line 649:
-  |    EVENTS |  event pointer provided
-[2023-10-07 02:00:02.241277504]POCL: in fn pocl_create_command_struct at line 672:
-  |    EVENTS |  Created immediate command struct: CMD 0x5583cb1743b0 (event 15 / 0x5583cb1744c0, type: write_buffer)
-[2023-10-07 02:00:02.241290247]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 14 (0x5583cb175100), Refcount: 1
-[2023-10-07 02:00:02.241305871]POCL: in fn pocl_command_enqueue at line 1191:
-  |    EVENTS |  In-order Q; adding event syncs
-[2023-10-07 02:00:02.241314462]POCL: in fn pocl_command_enqueue at line 1237:
-  |    EVENTS |  Pushed Event 15 to CQ 4.
-[2023-10-07 02:00:02.140733434715112]POCL: in fn pocl_update_event_queued at line 2084:
-  |    EVENTS |  Event queued: 15
-[2023-10-07 02:00:02.241338779]POCL: in fn pocl_update_event_submitted at line 2104:
-  |    EVENTS |  Event submitted: 15
-[2023-10-07 02:00:02.172040044031]POCL: in fn pocl_update_event_running_unlocked at line 2123:
-  |    EVENTS |  Event running: 15
 to copy to 0x90006000 with 1 bytes
-[2023-10-07 02:00:02.94021370451501]POCL: in fn pocl_update_event_finished at line 2217:
-  |    EVENTS |  ventus: Command complete, event 15
-[2023-10-07 02:00:02.94021370463762]POCL: in fn pocl_exec_command at line 337:
-  |    TIMING |       >>>        22.547  us    Event Write Buffer          
-[2023-10-07 02:00:02.30306173131]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 14 (0x5583ca9ca5c0), Refcount: 1
-[2023-10-07 02:00:02.214989779196]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 15 (0x5583cb1744c0), Refcount: 2
-[2023-10-07 02:00:02.140733434816642]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_1 || SetArg idx   0 ||    Node* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9cce90 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  90CE9CCA 83550000
-[2023-10-07 02:00:02.241446185]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_1 || SetArg idx   1 ||     int* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583caa43e20 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  203EA4CA 83550000
-[2023-10-07 02:00:02.241461006]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_1 || SetArg idx   2 ||    char* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9ce8c0 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  C0E89CCA 83550000
-[2023-10-07 02:00:02.241474936]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_1 || SetArg idx   3 ||    char* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9cab80 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  80AB9CCA 83550000
-[2023-10-07 02:00:02.241488577]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_1 || SetArg idx   4 ||    char* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9cb0a0 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  A0B09CCA 83550000
-[2023-10-07 02:00:02.241502858]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_1 || SetArg idx   5 ||     int* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9cb280 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  80B29CCA 83550000
-[2023-10-07 02:00:02.241523038]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_1 || SetArg idx   6 ||      int || Local 0 || Size      4 || Value 0x7fffbf711db8 || Pointer (nil) || *(uint32*)Value:       32 || *(uint64*)Value:        0 ||
-Hex Value:  20000000
-[2023-10-07 02:00:02.172040235549]POCL: in fn pocl_kernel_calc_wg_size at line 173:
-  |   GENERAL |  Preparing kernel BFS_1 with local size 32 x 1 x 1 group sizes 1 x 1 x 1...
-[2023-10-07 02:00:02.241556571]POCL: in fn POclRetainCommandQueue at line 35:
-  | REFCOUNTS |  Retain Command Queue 4 (0x5583ca9c3900), Refcount: 17
-[2023-10-07 02:00:02.140557341302840]POCL: in fn pocl_create_event at line 528:
-  |    EVENTS |  Created event 16 (0x5583cb151e10) Command ndrange_kernel
-[2023-10-07 02:00:02.140733434978260]POCL: in fn pocl_create_command_struct at line 649:
-  |    EVENTS |  event pointer provided
-[2023-10-07 02:00:02.241601959]POCL: in fn pocl_create_command_struct at line 672:
-  |    EVENTS |  Created immediate command struct: CMD 0x5583cb151d00 (event 16 / 0x5583cb151e10, type: ndrange_kernel)
-[2023-10-07 02:00:02.241616048]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 12 (0x5583caeb9c80), Refcount: 3
-[2023-10-07 02:00:02.241628752]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 12 (0x5583caeb9c80), Refcount: 2
-[2023-10-07 02:00:02.241641127]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 13 (0x5583ca9d3f50), Refcount: 3
-[2023-10-07 02:00:02.241657215]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 13 (0x5583ca9d3f50), Refcount: 2
-[2023-10-07 02:00:02.241673077]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 13 (0x5583ca9d3f50), Refcount: 1
-[2023-10-07 02:00:02.241683065]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 12 (0x5583caeb9c80), Refcount: 1
-[2023-10-07 02:00:02.241697328]POCL: in fn POclRetainKernel at line 34:
-  | REFCOUNTS |  Retain Kernel BFS_1 (0x5583ca9c9c60), Refcount: 2
-[2023-10-07 02:00:02.241716237]POCL: in fn pocl_command_enqueue at line 1191:
-  |    EVENTS |  In-order Q; adding event syncs
-[2023-10-07 02:00:02.241739370]POCL: in fn pocl_command_enqueue at line 1237:
-  |    EVENTS |  Pushed Event 16 to CQ 4.
-[2023-10-07 02:00:02.140733435143203]POCL: in fn pocl_update_event_queued at line 2084:
-  |    EVENTS |  Event queued: 16
-[2023-10-07 02:00:02.241774631]POCL: in fn pocl_update_event_submitted at line 2104:
-  |    EVENTS |  Event submitted: 16
-[2023-10-07 02:00:02.241787187]POCL: in fn pocl_update_event_running_unlocked at line 2123:
-  |    EVENTS |  Event running: 16
 notice that ventus hasn't support local buffer as argument yet.
-[2023-10-07 02:00:02.94021370942347]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 608:
-  |    VENTUS |  Allocating kernel arg buffer entry:
-Warning: the memory at  [0x9008F000, 0x9008F01B] has been realigned
-to the 4 KiB page size: [0x9008F000, 0x9008FFFF]
 to allocate at 0x9008f000 with 4096 bytes 
 to copy to 0x9008f000 with 28 bytes
-[2023-10-07 02:00:02.140557358365729]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 662:
-  |    VENTUS |  Kernel entry of "BFS_1" is : "0x800000a8"
-[2023-10-07 02:00:02.897581903]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 685:
-  |    VENTUS |  Vmem file has been written to object.vmem
-[2023-10-07 02:00:02.897761941]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 731:
-  |    VENTUS |  Preparing private memory of ventus:
 to allocate at 0x90090000 with 131072 bytes 
-[2023-10-07 02:00:02.897779391]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 766:
-  |    VENTUS |  Allocating metadata space:
-Warning: the memory at  [0x900B0000, 0x900B003F] has been realigned
-to the 4 KiB page size: [0x900B0000, 0x900B0FFF]
 to allocate at 0x900b0000 with 4096 bytes 
 to copy to 0x900b0000 with 64 bytes
-[2023-10-07 02:00:02.897811279]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 776:
-  |    VENTUS |  kernel metadata has been written to 0x900b0000
-arg gpgpu is numw:1,numt:32,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x20000,pdsbase:0x90090000,knlbase:0x900b0000
+arg gpgpu is numw:4,numt:8,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x8000,pdsbase:0x90090000,knlbase:0x900b0000
 vaddr mem scope is -m0x70000000:0x900b1000
 src file is object.riscv, run log is written to object.riscv.log
-spike -l --log-commits -p1 --isa rv32gcv_zfh --pc=0x80000000 -m0x70000000:0x900b1000 --varch vlen:1024,elen:32 --gpgpuarch numw:1,numt:32,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x20000,pdsbase:0x90090000,knlbase:0x900b0000 --log=object.riscv.log object.riscv 
-warp number: 1 thread number = 20  workgroup number = 1 workgroup dimension:1*1*1 lds size: 1000 pds size: 20000 lds base: 70000000 pds base: 90090000 knl base: 900b0000
+spike -l --log-commits -p4 --isa rv32gcv_zfh --pc=0x80000000 -m0x70000000:0x900b1000 --varch vlen:256,elen:32 --gpgpuarch numw:4,numt:8,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x8000,pdsbase:0x90090000,knlbase:0x900b0000 --log=object.riscv.log object.riscv 
+warp number: 4 thread number = 8  workgroup number = 1 workgroup dimension:1*1*1 lds size: 1000 pds size: 8000 lds base: 70000000 pds base: 90090000 knl base: 900b0000
 all warps reach the endprg. now proc 0 will end the simulation.
 Log file object.riscv.log renamed successfully to BFS_1_2.log.
-[2023-10-07 02:00:02.907871164]POCL: in fn pocl_update_event_finished at line 2217:
-  |    EVENTS |  ventus: Command complete, event 16
-[2023-10-07 02:00:02.94022036967950]POCL: in fn pocl_exec_command at line 609:
-  |    TIMING |       >>>       666.067  ms    Event Enqueue NDRange       
-[2023-10-07 02:00:02.94022036985219]POCL: in fn POclReleaseKernel at line 39:
-  | REFCOUNTS |  Release Kernel BFS_1 (0x5583ca9c9c60), Refcount: 1
-[2023-10-07 02:00:02.140734101312978]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 8 (0x5583ca9cce90), Refcount: 1
-[2023-10-07 02:00:02.907936236]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 9 (0x5583caa43e20), Refcount: 1
-[2023-10-07 02:00:02.907946653]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 10 (0x5583ca9ce8c0), Refcount: 1
-[2023-10-07 02:00:02.907960455]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 11 (0x5583ca9cab80), Refcount: 1
-[2023-10-07 02:00:02.907965349]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 12 (0x5583ca9cb0a0), Refcount: 1
-[2023-10-07 02:00:02.907971902]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 13 (0x5583ca9cb280), Refcount: 1
-[2023-10-07 02:00:02.215656352983]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 16 (0x5583cb151e10), Refcount: 7
-[2023-10-07 02:00:02.94022037081581]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_2 || SetArg idx   0 ||    char* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9ce8c0 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  C0E89CCA 83550000
-[2023-10-07 02:00:02.908018726]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_2 || SetArg idx   1 ||    char* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9cab80 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  80AB9CCA 83550000
-[2023-10-07 02:00:02.908029712]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_2 || SetArg idx   2 ||    char* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9cb0a0 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  A0B09CCA 83550000
-[2023-10-07 02:00:02.908043483]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_2 || SetArg idx   3 ||    char* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9ca5c0 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  C0A59CCA 83550000
-[2023-10-07 02:00:02.910257590]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_2 || SetArg idx   4 ||      int || Local 0 || Size      4 || Value 0x7fffbf711db8 || Pointer (nil) || *(uint32*)Value:       32 || *(uint64*)Value:        0 ||
-Hex Value:  20000000
-[2023-10-07 02:00:02.910275289]POCL: in fn pocl_kernel_calc_wg_size at line 173:
-  |   GENERAL |  Preparing kernel BFS_2 with local size 32 x 1 x 1 group sizes 1 x 1 x 1...
-[2023-10-07 02:00:02.910295267]POCL: in fn POclRetainCommandQueue at line 35:
-  | REFCOUNTS |  Retain Command Queue 4 (0x5583ca9c3900), Refcount: 18
-[2023-10-07 02:00:02.140558010038099]POCL: in fn pocl_create_event at line 528:
-  |    EVENTS |  Created event 17 (0x5583caea53b0) Command ndrange_kernel
-[2023-10-07 02:00:02.140734103710863]POCL: in fn pocl_create_command_struct at line 649:
-  |    EVENTS |  event pointer provided
-[2023-10-07 02:00:02.910332543]POCL: in fn pocl_create_command_struct at line 672:
-  |    EVENTS |  Created immediate command struct: CMD 0x5583caea52a0 (event 17 / 0x5583caea53b0, type: ndrange_kernel)
-[2023-10-07 02:00:02.910354690]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 16 (0x5583cb151e10), Refcount: 6
-[2023-10-07 02:00:02.910364813]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 16 (0x5583cb151e10), Refcount: 5
-[2023-10-07 02:00:02.910374296]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 16 (0x5583cb151e10), Refcount: 4
-[2023-10-07 02:00:02.910387063]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 15 (0x5583cb1744c0), Refcount: 1
-[2023-10-07 02:00:02.910394875]POCL: in fn POclRetainKernel at line 34:
-  | REFCOUNTS |  Retain Kernel BFS_2 (0x5583ca9ccdb0), Refcount: 2
-[2023-10-07 02:00:02.910406251]POCL: in fn pocl_command_enqueue at line 1191:
-  |    EVENTS |  In-order Q; adding event syncs
-[2023-10-07 02:00:02.910426366]POCL: in fn pocl_command_enqueue at line 1237:
-  |    EVENTS |  Pushed Event 17 to CQ 4.
-[2023-10-07 02:00:02.140734103824185]POCL: in fn pocl_update_event_queued at line 2084:
-  |    EVENTS |  Event queued: 17
-[2023-10-07 02:00:02.910446301]POCL: in fn pocl_update_event_submitted at line 2104:
-  |    EVENTS |  Event submitted: 17
-[2023-10-07 02:00:02.910464135]POCL: in fn pocl_update_event_running_unlocked at line 2123:
-  |    EVENTS |  Event running: 17
 notice that ventus hasn't support local buffer as argument yet.
-[2023-10-07 02:00:02.94022039611896]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 608:
-  |    VENTUS |  Allocating kernel arg buffer entry:
-Warning: the memory at  [0x900B1000, 0x900B1013] has been realigned
-to the 4 KiB page size: [0x900B1000, 0x900B1FFF]
 to allocate at 0x900b1000 with 4096 bytes 
 to copy to 0x900b1000 with 20 bytes
-[2023-10-07 02:00:02.140558027536186]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 662:
-  |    VENTUS |  Kernel entry of "BFS_2" is : "0x800001c8"
-[2023-10-07 02:00:03.635562055]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 685:
-  |    VENTUS |  Vmem file has been written to object.vmem
-[2023-10-07 02:00:03.635756552]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 731:
-  |    VENTUS |  Preparing private memory of ventus:
 to allocate at 0x900b2000 with 131072 bytes 
-[2023-10-07 02:00:03.635775627]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 766:
-  |    VENTUS |  Allocating metadata space:
-Warning: the memory at  [0x900D2000, 0x900D203F] has been realigned
-to the 4 KiB page size: [0x900D2000, 0x900D2FFF]
 to allocate at 0x900d2000 with 4096 bytes 
 to copy to 0x900d2000 with 64 bytes
-[2023-10-07 02:00:03.635796073]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 776:
-  |    VENTUS |  kernel metadata has been written to 0x900d2000
-arg gpgpu is numw:1,numt:32,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x20000,pdsbase:0x900b2000,knlbase:0x900d2000
+arg gpgpu is numw:4,numt:8,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x8000,pdsbase:0x900b2000,knlbase:0x900d2000
 vaddr mem scope is -m0x70000000:0x900d3000
 src file is object.riscv, run log is written to object.riscv.log
-spike -l --log-commits -p1 --isa rv32gcv_zfh --pc=0x80000000 -m0x70000000:0x900d3000 --varch vlen:1024,elen:32 --gpgpuarch numw:1,numt:32,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x20000,pdsbase:0x900b2000,knlbase:0x900d2000 --log=object.riscv.log object.riscv 
-warp number: 1 thread number = 20  workgroup number = 1 workgroup dimension:1*1*1 lds size: 1000 pds size: 20000 lds base: 70000000 pds base: 900b2000 knl base: 900d2000
+spike -l --log-commits -p4 --isa rv32gcv_zfh --pc=0x80000000 -m0x70000000:0x900d3000 --varch vlen:256,elen:32 --gpgpuarch numw:4,numt:8,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x8000,pdsbase:0x900b2000,knlbase:0x900d2000 --log=object.riscv.log object.riscv 
+warp number: 4 thread number = 8  workgroup number = 1 workgroup dimension:1*1*1 lds size: 1000 pds size: 8000 lds base: 70000000 pds base: 900b2000 knl base: 900d2000
 all warps reach the endprg. now proc 0 will end the simulation.
 Log file object.riscv.log renamed successfully to BFS_2_2.log.
-[2023-10-07 02:00:03.644034902]POCL: in fn pocl_update_event_finished at line 2217:
-  |    EVENTS |  ventus: Command complete, event 17
-[2023-10-07 02:00:03.94021773130796]POCL: in fn pocl_exec_command at line 609:
-  |    TIMING |       >>>       733.553  ms    Event Enqueue NDRange       
-[2023-10-07 02:00:03.94021773148187]POCL: in fn POclReleaseKernel at line 39:
-  | REFCOUNTS |  Release Kernel BFS_2 (0x5583ca9ccdb0), Refcount: 1
-[2023-10-07 02:00:03.140733837470139]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 10 (0x5583ca9ce8c0), Refcount: 1
-[2023-10-07 02:00:03.644091653]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 11 (0x5583ca9cab80), Refcount: 1
-[2023-10-07 02:00:03.644100101]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 12 (0x5583ca9cb0a0), Refcount: 1
-[2023-10-07 02:00:03.644107251]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 14 (0x5583ca9ca5c0), Refcount: 1
-[2023-10-07 02:00:03.215392502391]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 17 (0x5583caea53b0), Refcount: 5
-[2023-10-07 02:00:03.644154790]POCL: in fn POclRetainCommandQueue at line 35:
-  | REFCOUNTS |  Retain Command Queue 4 (0x5583ca9c3900), Refcount: 19
-[2023-10-07 02:00:03.140557743891585]POCL: in fn pocl_create_event at line 528:
-  |    EVENTS |  Created event 18 (0x5583cb410630) Command read_buffer
-[2023-10-07 02:00:03.140733837559334]POCL: in fn pocl_create_command_struct at line 649:
-  |    EVENTS |  event pointer provided
-[2023-10-07 02:00:03.644178966]POCL: in fn pocl_create_command_struct at line 672:
-  |    EVENTS |  Created immediate command struct: CMD 0x5583cb410520 (event 18 / 0x5583cb410630, type: read_buffer)
-[2023-10-07 02:00:03.644188014]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 17 (0x5583caea53b0), Refcount: 4
-[2023-10-07 02:00:03.644196131]POCL: in fn pocl_command_enqueue at line 1191:
-  |    EVENTS |  In-order Q; adding event syncs
-[2023-10-07 02:00:03.644203619]POCL: in fn pocl_command_enqueue at line 1237:
-  |    EVENTS |  Pushed Event 18 to CQ 4.
-[2023-10-07 02:00:03.140733837599283]POCL: in fn pocl_update_event_queued at line 2084:
-  |    EVENTS |  Event queued: 18
-[2023-10-07 02:00:03.644219303]POCL: in fn pocl_update_event_submitted at line 2104:
-  |    EVENTS |  Event submitted: 18
-[2023-10-07 02:00:03.172442919347]POCL: in fn pocl_update_event_running_unlocked at line 2123:
-  |    EVENTS |  Event running: 18
 to copy from 0x90006000 with 1 bytes
-[2023-10-07 02:00:03.644241636]POCL: in fn pocl_update_event_finished at line 2217:
-  |    EVENTS |  ventus: Command complete, event 18
-[2023-10-07 02:00:03.94021773331069]POCL: in fn pocl_exec_command at line 324:
-  |    TIMING |       >>>        14.139  us    Event Read Buffer           
-[2023-10-07 02:00:03.30709033625]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 14 (0x5583ca9ca5c0), Refcount: 1
-[2023-10-07 02:00:03.215392643463]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 18 (0x5583cb410630), Refcount: 2
-[2023-10-07 02:00:03.644291950]POCL: in fn POclRetainCommandQueue at line 35:
-  | REFCOUNTS |  Retain Command Queue 4 (0x5583ca9c3900), Refcount: 20
-[2023-10-07 02:00:03.140557744036827]POCL: in fn pocl_create_event at line 528:
-  |    EVENTS |  Created event 19 (0x5583cb433cf0) Command write_buffer
-[2023-10-07 02:00:03.140733837707598]POCL: in fn pocl_create_command_struct at line 649:
-  |    EVENTS |  event pointer provided
-[2023-10-07 02:00:03.644330403]POCL: in fn pocl_create_command_struct at line 672:
-  |    EVENTS |  Created immediate command struct: CMD 0x5583cb433be0 (event 19 / 0x5583cb433cf0, type: write_buffer)
-[2023-10-07 02:00:03.644337333]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 18 (0x5583cb410630), Refcount: 1
-[2023-10-07 02:00:03.644343799]POCL: in fn pocl_command_enqueue at line 1191:
-  |    EVENTS |  In-order Q; adding event syncs
-[2023-10-07 02:00:03.644349959]POCL: in fn pocl_command_enqueue at line 1237:
-  |    EVENTS |  Pushed Event 19 to CQ 4.
-[2023-10-07 02:00:03.140733837740979]POCL: in fn pocl_update_event_queued at line 2084:
-  |    EVENTS |  Event queued: 19
-[2023-10-07 02:00:03.644358948]POCL: in fn pocl_update_event_submitted at line 2104:
-  |    EVENTS |  Event submitted: 19
-[2023-10-07 02:00:03.172443057419]POCL: in fn pocl_update_event_running_unlocked at line 2123:
-  |    EVENTS |  Event running: 19
 to copy to 0x90006000 with 1 bytes
-[2023-10-07 02:00:03.94021773456361]POCL: in fn pocl_update_event_finished at line 2217:
-  |    EVENTS |  ventus: Command complete, event 19
-[2023-10-07 02:00:03.94021773465768]POCL: in fn pocl_exec_command at line 337:
-  |    TIMING |       >>>        14.032  us    Event Write Buffer          
-[2023-10-07 02:00:03.30709172480]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 14 (0x5583ca9ca5c0), Refcount: 1
-[2023-10-07 02:00:03.215392790208]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 19 (0x5583cb433cf0), Refcount: 2
-[2023-10-07 02:00:03.140733837822549]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_1 || SetArg idx   0 ||    Node* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9cce90 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  90CE9CCA 83550000
-[2023-10-07 02:00:03.644446492]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_1 || SetArg idx   1 ||     int* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583caa43e20 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  203EA4CA 83550000
-[2023-10-07 02:00:03.644451600]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_1 || SetArg idx   2 ||    char* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9ce8c0 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  C0E89CCA 83550000
-[2023-10-07 02:00:03.644470534]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_1 || SetArg idx   3 ||    char* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9cab80 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  80AB9CCA 83550000
-[2023-10-07 02:00:03.644485141]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_1 || SetArg idx   4 ||    char* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9cb0a0 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  A0B09CCA 83550000
-[2023-10-07 02:00:03.644493590]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_1 || SetArg idx   5 ||     int* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9cb280 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  80B29CCA 83550000
-[2023-10-07 02:00:03.644502182]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_1 || SetArg idx   6 ||      int || Local 0 || Size      4 || Value 0x7fffbf711db8 || Pointer (nil) || *(uint32*)Value:       32 || *(uint64*)Value:        0 ||
-Hex Value:  20000000
-[2023-10-07 02:00:03.172443204585]POCL: in fn pocl_kernel_calc_wg_size at line 173:
-  |   GENERAL |  Preparing kernel BFS_1 with local size 32 x 1 x 1 group sizes 1 x 1 x 1...
-[2023-10-07 02:00:03.644523916]POCL: in fn POclRetainCommandQueue at line 35:
-  | REFCOUNTS |  Retain Command Queue 4 (0x5583ca9c3900), Refcount: 21
-[2023-10-07 02:00:03.140557744260406]POCL: in fn pocl_create_event at line 528:
-  |    EVENTS |  Created event 20 (0x5583cb4330b0) Command ndrange_kernel
-[2023-10-07 02:00:03.140733837927227]POCL: in fn pocl_create_command_struct at line 649:
-  |    EVENTS |  event pointer provided
-[2023-10-07 02:00:03.644546034]POCL: in fn pocl_create_command_struct at line 672:
-  |    EVENTS |  Created immediate command struct: CMD 0x5583cb432fa0 (event 20 / 0x5583cb4330b0, type: ndrange_kernel)
-[2023-10-07 02:00:03.644554599]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 16 (0x5583cb151e10), Refcount: 3
-[2023-10-07 02:00:03.644561868]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 16 (0x5583cb151e10), Refcount: 2
-[2023-10-07 02:00:03.644569058]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 17 (0x5583caea53b0), Refcount: 3
-[2023-10-07 02:00:03.644576679]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 17 (0x5583caea53b0), Refcount: 2
-[2023-10-07 02:00:03.644584010]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 17 (0x5583caea53b0), Refcount: 1
-[2023-10-07 02:00:03.644592944]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 16 (0x5583cb151e10), Refcount: 1
-[2023-10-07 02:00:03.644601651]POCL: in fn POclRetainKernel at line 34:
-  | REFCOUNTS |  Retain Kernel BFS_1 (0x5583ca9c9c60), Refcount: 2
-[2023-10-07 02:00:03.644610881]POCL: in fn pocl_command_enqueue at line 1191:
-  |    EVENTS |  In-order Q; adding event syncs
-[2023-10-07 02:00:03.644618039]POCL: in fn pocl_command_enqueue at line 1237:
-  |    EVENTS |  Pushed Event 20 to CQ 4.
-[2023-10-07 02:00:03.140733838009333]POCL: in fn pocl_update_event_queued at line 2084:
-  |    EVENTS |  Event queued: 20
-[2023-10-07 02:00:03.644624320]POCL: in fn pocl_update_event_submitted at line 2104:
-  |    EVENTS |  Event submitted: 20
-[2023-10-07 02:00:03.644633468]POCL: in fn pocl_update_event_running_unlocked at line 2123:
-  |    EVENTS |  Event running: 20
 notice that ventus hasn't support local buffer as argument yet.
-[2023-10-07 02:00:03.94021773772293]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 608:
-  |    VENTUS |  Allocating kernel arg buffer entry:
-Warning: the memory at  [0x900D3000, 0x900D301B] has been realigned
-to the 4 KiB page size: [0x900D3000, 0x900D3FFF]
 to allocate at 0x900d3000 with 4096 bytes 
 to copy to 0x900d3000 with 28 bytes
-[2023-10-07 02:00:03.140557771826864]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 662:
-  |    VENTUS |  Kernel entry of "BFS_1" is : "0x800000a8"
-[2023-10-07 02:00:04.418531377]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 685:
-  |    VENTUS |  Vmem file has been written to object.vmem
-[2023-10-07 02:00:04.418707821]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 731:
-  |    VENTUS |  Preparing private memory of ventus:
 to allocate at 0x900d4000 with 131072 bytes 
-[2023-10-07 02:00:04.418721175]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 766:
-  |    VENTUS |  Allocating metadata space:
-Warning: the memory at  [0x900F4000, 0x900F403F] has been realigned
-to the 4 KiB page size: [0x900F4000, 0x900F4FFF]
 to allocate at 0x900f4000 with 4096 bytes 
 to copy to 0x900f4000 with 64 bytes
-[2023-10-07 02:00:04.418763312]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 776:
-  |    VENTUS |  kernel metadata has been written to 0x900f4000
-arg gpgpu is numw:1,numt:32,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x20000,pdsbase:0x900d4000,knlbase:0x900f4000
+arg gpgpu is numw:4,numt:8,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x8000,pdsbase:0x900d4000,knlbase:0x900f4000
 vaddr mem scope is -m0x70000000:0x900f5000
 src file is object.riscv, run log is written to object.riscv.log
-spike -l --log-commits -p1 --isa rv32gcv_zfh --pc=0x80000000 -m0x70000000:0x900f5000 --varch vlen:1024,elen:32 --gpgpuarch numw:1,numt:32,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x20000,pdsbase:0x900d4000,knlbase:0x900f4000 --log=object.riscv.log object.riscv 
-warp number: 1 thread number = 20  workgroup number = 1 workgroup dimension:1*1*1 lds size: 1000 pds size: 20000 lds base: 70000000 pds base: 900d4000 knl base: 900f4000
+spike -l --log-commits -p4 --isa rv32gcv_zfh --pc=0x80000000 -m0x70000000:0x900f5000 --varch vlen:256,elen:32 --gpgpuarch numw:4,numt:8,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x8000,pdsbase:0x900d4000,knlbase:0x900f4000 --log=object.riscv.log object.riscv 
+warp number: 4 thread number = 8  workgroup number = 1 workgroup dimension:1*1*1 lds size: 1000 pds size: 8000 lds base: 70000000 pds base: 900d4000 knl base: 900f4000
 all warps reach the endprg. now proc 0 will end the simulation.
 Log file object.riscv.log renamed successfully to BFS_1_3.log.
-[2023-10-07 02:00:04.428408228]POCL: in fn pocl_update_event_finished at line 2217:
-  |    EVENTS |  ventus: Command complete, event 20
-[2023-10-07 02:00:04.94021557503342]POCL: in fn pocl_exec_command at line 609:
-  |    TIMING |       >>>       783.756  ms    Event Enqueue NDRange       
-[2023-10-07 02:00:04.94021557517271]POCL: in fn POclReleaseKernel at line 39:
-  | REFCOUNTS |  Release Kernel BFS_1 (0x5583ca9c9c60), Refcount: 1
-[2023-10-07 02:00:04.140733621840337]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 8 (0x5583ca9cce90), Refcount: 1
-[2023-10-07 02:00:04.428474616]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 9 (0x5583caa43e20), Refcount: 1
-[2023-10-07 02:00:04.428483390]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 10 (0x5583ca9ce8c0), Refcount: 1
-[2023-10-07 02:00:04.428498121]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 11 (0x5583ca9cab80), Refcount: 1
-[2023-10-07 02:00:04.428510270]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 12 (0x5583ca9cb0a0), Refcount: 1
-[2023-10-07 02:00:04.428523534]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 13 (0x5583ca9cb280), Refcount: 1
-[2023-10-07 02:00:04.215176904452]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 20 (0x5583cb4330b0), Refcount: 7
-[2023-10-07 02:00:04.94021557629465]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_2 || SetArg idx   0 ||    char* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9ce8c0 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  C0E89CCA 83550000
-[2023-10-07 02:00:04.428566902]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_2 || SetArg idx   1 ||    char* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9cab80 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  80AB9CCA 83550000
-[2023-10-07 02:00:04.428578281]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_2 || SetArg idx   2 ||    char* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9cb0a0 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  A0B09CCA 83550000
-[2023-10-07 02:00:04.428594687]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_2 || SetArg idx   3 ||    char* || Local 0 || Size      8 || Value 0x7fffbf711dc0 || Pointer 0x5583ca9ca5c0 || *(uint32*)Value:        0 || *(uint64*)Value:        0 ||
-Hex Value:  C0A59CCA 83550000
-[2023-10-07 02:00:04.428625650]POCL: in fn POclSetKernelArg at line 113:
-  |   GENERAL |  Kernel           BFS_2 || SetArg idx   4 ||      int || Local 0 || Size      4 || Value 0x7fffbf711db8 || Pointer (nil) || *(uint32*)Value:       32 || *(uint64*)Value:        0 ||
-Hex Value:  20000000
-[2023-10-07 02:00:04.428641437]POCL: in fn pocl_kernel_calc_wg_size at line 173:
-  |   GENERAL |  Preparing kernel BFS_2 with local size 32 x 1 x 1 group sizes 1 x 1 x 1...
-[2023-10-07 02:00:04.428656850]POCL: in fn POclRetainCommandQueue at line 35:
-  | REFCOUNTS |  Retain Command Queue 4 (0x5583ca9c3900), Refcount: 22
-[2023-10-07 02:00:04.140557528396095]POCL: in fn pocl_create_event at line 528:
-  |    EVENTS |  Created event 21 (0x5583cb1757f0) Command ndrange_kernel
-[2023-10-07 02:00:04.140733622062366]POCL: in fn pocl_create_command_struct at line 649:
-  |    EVENTS |  event pointer provided
-[2023-10-07 02:00:04.428687987]POCL: in fn pocl_create_command_struct at line 672:
-  |    EVENTS |  Created immediate command struct: CMD 0x5583cb1756e0 (event 21 / 0x5583cb1757f0, type: ndrange_kernel)
-[2023-10-07 02:00:04.428698898]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 20 (0x5583cb4330b0), Refcount: 6
-[2023-10-07 02:00:04.428708486]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 20 (0x5583cb4330b0), Refcount: 5
-[2023-10-07 02:00:04.428717801]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 20 (0x5583cb4330b0), Refcount: 4
-[2023-10-07 02:00:04.428726947]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 19 (0x5583cb433cf0), Refcount: 1
-[2023-10-07 02:00:04.428744815]POCL: in fn POclRetainKernel at line 34:
-  | REFCOUNTS |  Retain Kernel BFS_2 (0x5583ca9ccdb0), Refcount: 2
-[2023-10-07 02:00:04.428760999]POCL: in fn pocl_command_enqueue at line 1191:
-  |    EVENTS |  In-order Q; adding event syncs
-[2023-10-07 02:00:04.428770780]POCL: in fn pocl_command_enqueue at line 1237:
-  |    EVENTS |  Pushed Event 21 to CQ 4.
-[2023-10-07 02:00:04.140733622178394]POCL: in fn pocl_update_event_queued at line 2084:
-  |    EVENTS |  Event queued: 21
-[2023-10-07 02:00:04.428800961]POCL: in fn pocl_update_event_submitted at line 2104:
-  |    EVENTS |  Event submitted: 21
-[2023-10-07 02:00:04.428814114]POCL: in fn pocl_update_event_running_unlocked at line 2123:
-  |    EVENTS |  Event running: 21
 notice that ventus hasn't support local buffer as argument yet.
-[2023-10-07 02:00:04.94021557955955]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 608:
-  |    VENTUS |  Allocating kernel arg buffer entry:
-Warning: the memory at  [0x900F5000, 0x900F5013] has been realigned
-to the 4 KiB page size: [0x900F5000, 0x900F5FFF]
 to allocate at 0x900f5000 with 4096 bytes 
 to copy to 0x900f5000 with 20 bytes
-[2023-10-07 02:00:04.140557566274535]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 662:
-  |    VENTUS |  Kernel entry of "BFS_2" is : "0x800001c8"
-[2023-10-07 02:00:05.199925836]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 685:
-  |    VENTUS |  Vmem file has been written to object.vmem
-[2023-10-07 02:00:05.200099255]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 731:
-  |    VENTUS |  Preparing private memory of ventus:
 to allocate at 0x900f6000 with 131072 bytes 
-[2023-10-07 02:00:05.200116703]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 766:
-  |    VENTUS |  Allocating metadata space:
-Warning: the memory at  [0x90116000, 0x9011603F] has been realigned
-to the 4 KiB page size: [0x90116000, 0x90116FFF]
 to allocate at 0x90116000 with 4096 bytes 
 to copy to 0x90116000 with 64 bytes
-[2023-10-07 02:00:05.200150925]POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 776:
-  |    VENTUS |  kernel metadata has been written to 0x90116000
-arg gpgpu is numw:1,numt:32,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x20000,pdsbase:0x900f6000,knlbase:0x90116000
+arg gpgpu is numw:4,numt:8,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x8000,pdsbase:0x900f6000,knlbase:0x90116000
 vaddr mem scope is -m0x70000000:0x90117000
 src file is object.riscv, run log is written to object.riscv.log
-spike -l --log-commits -p1 --isa rv32gcv_zfh --pc=0x80000000 -m0x70000000:0x90117000 --varch vlen:1024,elen:32 --gpgpuarch numw:1,numt:32,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x20000,pdsbase:0x900f6000,knlbase:0x90116000 --log=object.riscv.log object.riscv 
-warp number: 1 thread number = 20  workgroup number = 1 workgroup dimension:1*1*1 lds size: 1000 pds size: 20000 lds base: 70000000 pds base: 900f6000 knl base: 90116000
+spike -l --log-commits -p4 --isa rv32gcv_zfh --pc=0x80000000 -m0x70000000:0x90117000 --varch vlen:256,elen:32 --gpgpuarch numw:4,numt:8,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x8000,pdsbase:0x900f6000,knlbase:0x90116000 --log=object.riscv.log object.riscv 
+warp number: 4 thread number = 8  workgroup number = 1 workgroup dimension:1*1*1 lds size: 1000 pds size: 8000 lds base: 70000000 pds base: 900f6000 knl base: 90116000
 all warps reach the endprg. now proc 0 will end the simulation.
 Log file object.riscv.log renamed successfully to BFS_2_3.log.
-[2023-10-07 02:00:05.208640367]POCL: in fn pocl_update_event_finished at line 2217:
-  |    EVENTS |  ventus: Command complete, event 21
-[2023-10-07 02:00:05.94021337737072]POCL: in fn pocl_exec_command at line 609:
-  |    TIMING |       >>>       779.807  ms    Event Enqueue NDRange       
-[2023-10-07 02:00:05.94021337755292]POCL: in fn POclReleaseKernel at line 39:
-  | REFCOUNTS |  Release Kernel BFS_2 (0x5583ca9ccdb0), Refcount: 1
-[2023-10-07 02:00:05.140733402077697]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 10 (0x5583ca9ce8c0), Refcount: 1
-[2023-10-07 02:00:05.208699552]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 11 (0x5583ca9cab80), Refcount: 1
-[2023-10-07 02:00:05.208708009]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 12 (0x5583ca9cb0a0), Refcount: 1
-[2023-10-07 02:00:05.208716780]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 14 (0x5583ca9ca5c0), Refcount: 1
-[2023-10-07 02:00:05.214957090138]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 21 (0x5583cb1757f0), Refcount: 5
-[2023-10-07 02:00:05.208754606]POCL: in fn POclRetainCommandQueue at line 35:
-  | REFCOUNTS |  Retain Command Queue 4 (0x5583ca9c3900), Refcount: 23
-[2023-10-07 02:00:05.140557308494149]POCL: in fn pocl_create_event at line 528:
-  |    EVENTS |  Created event 22 (0x5583cb6efaf0) Command read_buffer
-[2023-10-07 02:00:05.140733402158421]POCL: in fn pocl_create_command_struct at line 649:
-  |    EVENTS |  event pointer provided
-[2023-10-07 02:00:05.208794645]POCL: in fn pocl_create_command_struct at line 672:
-  |    EVENTS |  Created immediate command struct: CMD 0x5583cb6ef9e0 (event 22 / 0x5583cb6efaf0, type: read_buffer)
-[2023-10-07 02:00:05.208823179]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 21 (0x5583cb1757f0), Refcount: 4
-[2023-10-07 02:00:05.208839512]POCL: in fn pocl_command_enqueue at line 1191:
-  |    EVENTS |  In-order Q; adding event syncs
-[2023-10-07 02:00:05.208855166]POCL: in fn pocl_command_enqueue at line 1237:
-  |    EVENTS |  Pushed Event 22 to CQ 4.
-[2023-10-07 02:00:05.140733402259180]POCL: in fn pocl_update_event_queued at line 2084:
-  |    EVENTS |  Event queued: 22
-[2023-10-07 02:00:05.208886963]POCL: in fn pocl_update_event_submitted at line 2104:
-  |    EVENTS |  Event submitted: 22
-[2023-10-07 02:00:05.172007594922]POCL: in fn pocl_update_event_running_unlocked at line 2123:
-  |    EVENTS |  Event running: 22
 to copy from 0x90006000 with 1 bytes
-[2023-10-07 02:00:05.208925687]POCL: in fn pocl_update_event_finished at line 2217:
-  |    EVENTS |  ventus: Command complete, event 22
-[2023-10-07 02:00:05.94021338025958]POCL: in fn pocl_exec_command at line 324:
-  |    TIMING |       >>>        22.615  us    Event Read Buffer           
-[2023-10-07 02:00:05.30273739794]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 14 (0x5583ca9ca5c0), Refcount: 1
-[2023-10-07 02:00:05.214957352005]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 22 (0x5583cb6efaf0), Refcount: 2
-[2023-10-07 02:00:05.209004534]POCL: in fn POclRetainCommandQueue at line 35:
-  | REFCOUNTS |  Retain Command Queue 4 (0x5583ca9c3900), Refcount: 24
-[2023-10-07 02:00:05.140557308749855]POCL: in fn pocl_create_event at line 528:
-  |    EVENTS |  Created event 23 (0x5583cb6cc470) Command read_buffer
-[2023-10-07 02:00:05.140733402424411]POCL: in fn pocl_create_command_struct at line 649:
-  |    EVENTS |  event pointer provided
-[2023-10-07 02:00:05.209051455]POCL: in fn pocl_create_command_struct at line 672:
-  |    EVENTS |  Created immediate command struct: CMD 0x5583cb6cc360 (event 23 / 0x5583cb6cc470, type: read_buffer)
-[2023-10-07 02:00:05.209069564]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 20 (0x5583cb4330b0), Refcount: 3
-[2023-10-07 02:00:05.209085418]POCL: in fn pocl_command_enqueue at line 1191:
-  |    EVENTS |  In-order Q; adding event syncs
-[2023-10-07 02:00:05.209100931]POCL: in fn pocl_command_enqueue at line 1237:
-  |    EVENTS |  Pushed Event 23 to CQ 4.
-[2023-10-07 02:00:05.140733402504148]POCL: in fn pocl_update_event_queued at line 2084:
-  |    EVENTS |  Event queued: 23
-[2023-10-07 02:00:05.209131189]POCL: in fn pocl_update_event_submitted at line 2104:
-  |    EVENTS |  Event submitted: 23
-[2023-10-07 02:00:05.172007838977]POCL: in fn pocl_update_event_running_unlocked at line 2123:
-  |    EVENTS |  Event running: 23
 to copy from 0x90005000 with 128 bytes
-[2023-10-07 02:00:05.209168973]POCL: in fn pocl_update_event_finished at line 2217:
-  |    EVENTS |  ventus: Command complete, event 23
-[2023-10-07 02:00:05.94021338260888]POCL: in fn pocl_exec_command at line 324:
-  |    TIMING |       >>>        21.667  us    Event Read Buffer           
-[2023-10-07 02:00:05.30273967830]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 13 (0x5583ca9cb280), Refcount: 1
-[2023-10-07 02:00:05.214957576883]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 23 (0x5583cb6cc470), Refcount: 2
-[2023-10-07 02:00:05.209232747]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 8 (0x5583ca9cce90), Refcount: 0
-[2023-10-07 02:00:05.209248897]POCL: in fn POclReleaseMemObject at line 92:
-  | REFCOUNTS |  Free Memory Object 8 (0x5583ca9cce90), Flags: 2
-[2023-10-07 02:00:05.209344936]POCL: in fn POclReleaseContext at line 49:
-  | REFCOUNTS |  Release Context 2 (0x5583ca9c1380), Refcount: 9
-[2023-10-07 02:00:05.209361663]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 20 (0x5583cb4330b0), Refcount: 2
-[2023-10-07 02:00:05.140733402766709]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 9 (0x5583caa43e20), Refcount: 0
-[2023-10-07 02:00:05.209394882]POCL: in fn POclReleaseMemObject at line 92:
-  | REFCOUNTS |  Free Memory Object 9 (0x5583caa43e20), Flags: 2
-[2023-10-07 02:00:05.94021338487444]POCL: in fn POclReleaseContext at line 49:
-  | REFCOUNTS |  Release Context 2 (0x5583ca9c1380), Refcount: 8
-[2023-10-07 02:00:05.209425995]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 20 (0x5583cb4330b0), Refcount: 1
-[2023-10-07 02:00:05.140733402829273]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 10 (0x5583ca9ce8c0), Refcount: 0
-[2023-10-07 02:00:05.209457137]POCL: in fn POclReleaseMemObject at line 92:
-  | REFCOUNTS |  Free Memory Object 10 (0x5583ca9ce8c0), Flags: 1
-[2023-10-07 02:00:05.94021338552462]POCL: in fn POclReleaseContext at line 49:
-  | REFCOUNTS |  Release Context 2 (0x5583ca9c1380), Refcount: 7
-[2023-10-07 02:00:05.209491025]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 21 (0x5583cb1757f0), Refcount: 3
-[2023-10-07 02:00:05.140733402894225]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 11 (0x5583ca9cab80), Refcount: 0
-[2023-10-07 02:00:05.209525163]POCL: in fn POclReleaseMemObject at line 92:
-  | REFCOUNTS |  Free Memory Object 11 (0x5583ca9cab80), Flags: 1
-[2023-10-07 02:00:05.94021338617360]POCL: in fn POclReleaseContext at line 49:
-  | REFCOUNTS |  Release Context 2 (0x5583ca9c1380), Refcount: 6
-[2023-10-07 02:00:05.209556171]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 21 (0x5583cb1757f0), Refcount: 2
-[2023-10-07 02:00:05.140733402959414]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 12 (0x5583ca9cb0a0), Refcount: 0
-[2023-10-07 02:00:05.209586553]POCL: in fn POclReleaseMemObject at line 92:
-  | REFCOUNTS |  Free Memory Object 12 (0x5583ca9cb0a0), Flags: 1
-[2023-10-07 02:00:05.94021338680155]POCL: in fn POclReleaseContext at line 49:
-  | REFCOUNTS |  Release Context 2 (0x5583ca9c1380), Refcount: 5
-[2023-10-07 02:00:05.209619091]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 21 (0x5583cb1757f0), Refcount: 1
-[2023-10-07 02:00:05.140733403025497]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 13 (0x5583ca9cb280), Refcount: 0
-[2023-10-07 02:00:05.209652720]POCL: in fn POclReleaseMemObject at line 92:
-  | REFCOUNTS |  Free Memory Object 13 (0x5583ca9cb280), Flags: 1
-[2023-10-07 02:00:05.94021338744581]POCL: in fn POclReleaseContext at line 49:
-  | REFCOUNTS |  Release Context 2 (0x5583ca9c1380), Refcount: 4
-[2023-10-07 02:00:05.209682838]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 23 (0x5583cb6cc470), Refcount: 1
-[2023-10-07 02:00:05.140733403086062]POCL: in fn POclReleaseMemObject at line 50:
-  | REFCOUNTS |  Release Memory Object 14 (0x5583ca9ca5c0), Refcount: 0
-[2023-10-07 02:00:05.209713229]POCL: in fn POclReleaseMemObject at line 92:
-  | REFCOUNTS |  Free Memory Object 14 (0x5583ca9ca5c0), Flags: 1
-[2023-10-07 02:00:05.94021338806166]POCL: in fn POclReleaseContext at line 49:
-  | REFCOUNTS |  Release Context 2 (0x5583ca9c1380), Refcount: 3
-[2023-10-07 02:00:05.209754460]POCL: in fn POclReleaseEvent at line 40:
-  | REFCOUNTS |  Release Event 22 (0x5583cb6efaf0), Refcount: 1
-[2023-10-07 02:00:05.209772443]POCL: in fn POclReleaseKernel at line 39:
-  | REFCOUNTS |  Release Kernel BFS_1 (0x5583ca9c9c60), Refcount: 0
-[2023-10-07 02:00:05.209787631]POCL: in fn POclReleaseKernel at line 49:
-  | REFCOUNTS |  Free Kernel BFS_1 (0x5583ca9c9c60)
-[2023-10-07 02:00:05.140557309932945]POCL: in fn POclReleaseProgram at line 52:
-  | REFCOUNTS |  Release Program 5 (0x5583ca9c3fe0), Refcount: 2, Kernel #: 2 
-[2023-10-07 02:00:05.210266369]POCL: in fn POclReleaseProgram at line 52:
-  | REFCOUNTS |  Release Program 5 (0x5583ca9c3fe0), Refcount: 1, Kernel #: 2 
-[2023-10-07 02:00:05.210484486]POCL: in fn POclReleaseCommandQueue at line 43:
-  | REFCOUNTS |  Release Command Queue 4 (0x5583ca9c3900), Refcount: 23
-[2023-10-07 02:00:05.210502330]POCL: in fn POclReleaseContext at line 49:
-  | REFCOUNTS |  Release Context 2 (0x5583ca9c1380), Refcount: 2
-Init: 322.321014
-MemAlloc: 0.976000
-HtoD: 0.249949
-Exec: 5939.957031
-DtoH: 0.113621
-Close: 1.289000
-Total: 6275.891113
+Init: 369.980988
+MemAlloc: 0.009000
+HtoD: 0.044879
+Exec: 6002.299805
+DtoH: 0.027096
+Close: 0.108000
+Total: 6373.017090
 cpu_results:  0 1 3 2 2 3 1 3 2 1 3 2 2 2 1 2 2 3 2 2 2 1 2 3 1 2 3 2 2 2 1 2
 gpu_results:  0 1 3 2 2 3 1 3 2 1 3 2 2 2 1 2 2 3 2 2 2 1 2 3 1 2 3 2 2 2 1 2
 --cambine:passed:-)
