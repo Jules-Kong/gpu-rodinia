@@ -234,11 +234,11 @@ Disassembly of section .text:
 800002bc: 6f 00 80 01  	j	0x800002d4 <.LBB0_7>
 
 800002c0 <.LBB0_4>:
-800002c0: ef 00 c0 1a  	jal	0x8000046c <__builtin_riscv_global_id_z>
+800002c0: ef 00 c0 1b  	jal	0x8000047c <__builtin_riscv_global_id_z>
 800002c4: 6f 00 00 01  	j	0x800002d4 <.LBB0_7>
 
 800002c8 <.LBB0_5>:
-800002c8: ef 00 c0 17  	jal	0x80000444 <__builtin_riscv_global_id_y>
+800002c8: ef 00 40 18  	jal	0x8000044c <__builtin_riscv_global_id_y>
 800002cc: 6f 00 80 00  	j	0x800002d4 <.LBB0_7>
 
 800002d0 <.LBB0_6>:
@@ -269,9 +269,9 @@ Disassembly of section .text:
 80000318: 63 82 e2 05  	beq	t0, t5, 0x8000035c <.GLR>
 
 8000031c <.GL_2DIM>:
-8000031c: ef 00 80 12  	jal	0x80000444 <__builtin_riscv_global_id_y>
+8000031c: ef 00 00 13  	jal	0x8000044c <__builtin_riscv_global_id_y>
 80000320: 83 af c6 00  	lw	t6, 12(a3)
-80000324: 03 af 06 01  	lw	t5, 16(a3)
+80000324: 03 af 86 02  	lw	t5, 40(a3)
 80000328: 57 43 0f 0a  	vsub.vx	v6, v0, t5
 8000032c: 57 e3 6f 96  	vmul.vx	v6, v6, t6
 80000330: d7 02 53 02  	vadd.vv	v5, v5, v6
@@ -279,7 +279,7 @@ Disassembly of section .text:
 80000338: 63 82 e2 03  	beq	t0, t5, 0x8000035c <.GLR>
 
 8000033c <.GL_3DIM>:
-8000033c: ef 00 00 13  	jal	0x8000046c <__builtin_riscv_global_id_z>
+8000033c: ef 00 00 14  	jal	0x8000047c <__builtin_riscv_global_id_z>
 80000340: 83 af c6 00  	lw	t6, 12(a3)
 80000344: 03 a3 06 01  	lw	t1, 16(a3)
 80000348: 03 af c6 02  	lw	t5, 44(a3)
@@ -362,117 +362,123 @@ Disassembly of section .text:
 80000424: 73 25 30 80  	csrr	a0, 2051
 80000428: 73 23 80 80  	csrr	t1, 2056
 8000042c: 03 2e 85 01  	lw	t3, 24(a0)
-80000430: b3 0f c3 03  	mul	t6, t1, t3
-80000434: 57 c0 0f 02  	vadd.vx	v0, v0, t6
-80000438: 83 20 01 00  	lw	ra, 0(sp)
-8000043c: 13 01 c1 ff  	addi	sp, sp, -4
-80000440: 67 80 00 00  	ret
+80000430: 83 2e 45 02  	lw	t4, 36(a0)
+80000434: b3 0f c3 03  	mul	t6, t1, t3
+80000438: b3 8f df 01  	add	t6, t6, t4
+8000043c: 57 c0 0f 02  	vadd.vx	v0, v0, t6
+80000440: 83 20 01 00  	lw	ra, 0(sp)
+80000444: 13 01 c1 ff  	addi	sp, sp, -4
+80000448: 67 80 00 00  	ret
 
-80000444 <__builtin_riscv_global_id_y>:
-80000444: 13 01 41 00  	addi	sp, sp, 4
-80000448: 23 20 11 00  	sw	ra, 0(sp)
-8000044c: ef f0 df f6  	jal	0x800003b8 <__builtin_riscv_workitem_id_y>
-80000450: 73 23 90 80  	csrr	t1, 2057
-80000454: 83 23 c5 01  	lw	t2, 28(a0)
-80000458: 33 0e 73 02  	mul	t3, t1, t2
-8000045c: 57 40 0e 02  	vadd.vx	v0, v0, t3
-80000460: 83 20 01 00  	lw	ra, 0(sp)
-80000464: 13 01 c1 ff  	addi	sp, sp, -4
-80000468: 67 80 00 00  	ret
+8000044c <__builtin_riscv_global_id_y>:
+8000044c: 13 01 41 00  	addi	sp, sp, 4
+80000450: 23 20 11 00  	sw	ra, 0(sp)
+80000454: ef f0 5f f6  	jal	0x800003b8 <__builtin_riscv_workitem_id_y>
+80000458: 73 23 90 80  	csrr	t1, 2057
+8000045c: 83 23 c5 01  	lw	t2, 28(a0)
+80000460: 83 2e 85 02  	lw	t4, 40(a0)
+80000464: 33 0e 73 02  	mul	t3, t1, t2
+80000468: 33 0e de 01  	add	t3, t3, t4
+8000046c: 57 40 0e 02  	vadd.vx	v0, v0, t3
+80000470: 83 20 01 00  	lw	ra, 0(sp)
+80000474: 13 01 c1 ff  	addi	sp, sp, -4
+80000478: 67 80 00 00  	ret
 
-8000046c <__builtin_riscv_global_id_z>:
-8000046c: 13 01 41 00  	addi	sp, sp, 4
-80000470: 23 20 11 00  	sw	ra, 0(sp)
-80000474: ef f0 1f f8  	jal	0x800003f4 <__builtin_riscv_workitem_id_z>
-80000478: 73 25 30 80  	csrr	a0, 2051
-8000047c: 73 23 a0 80  	csrr	t1, 2058
-80000480: 83 23 05 02  	lw	t2, 32(a0)
-80000484: b3 83 63 02  	mul	t2, t2, t1
-80000488: 57 c0 03 02  	vadd.vx	v0, v0, t2
-8000048c: 83 20 01 00  	lw	ra, 0(sp)
-80000490: 13 01 c1 ff  	addi	sp, sp, -4
-80000494: 67 80 00 00  	ret
+8000047c <__builtin_riscv_global_id_z>:
+8000047c: 13 01 41 00  	addi	sp, sp, 4
+80000480: 23 20 11 00  	sw	ra, 0(sp)
+80000484: ef f0 1f f7  	jal	0x800003f4 <__builtin_riscv_workitem_id_z>
+80000488: 73 25 30 80  	csrr	a0, 2051
+8000048c: 73 23 a0 80  	csrr	t1, 2058
+80000490: 83 23 05 02  	lw	t2, 32(a0)
+80000494: 03 2e c5 02  	lw	t3, 44(a0)
+80000498: b3 83 63 02  	mul	t2, t2, t1
+8000049c: b3 83 c3 01  	add	t2, t2, t3
+800004a0: 57 c0 03 02  	vadd.vx	v0, v0, t2
+800004a4: 83 20 01 00  	lw	ra, 0(sp)
+800004a8: 13 01 c1 ff  	addi	sp, sp, -4
+800004ac: 67 80 00 00  	ret
 
-80000498 <__builtin_riscv_local_size_x>:
-80000498: 73 25 30 80  	csrr	a0, 2051
-8000049c: 83 22 85 01  	lw	t0, 24(a0)
-800004a0: 57 c0 02 5e  	vmv.v.x	v0, t0
-800004a4: 67 80 00 00  	ret
+800004b0 <__builtin_riscv_local_size_x>:
+800004b0: 73 25 30 80  	csrr	a0, 2051
+800004b4: 83 22 85 01  	lw	t0, 24(a0)
+800004b8: 57 c0 02 5e  	vmv.v.x	v0, t0
+800004bc: 67 80 00 00  	ret
 
-800004a8 <__builtin_riscv_local_size_y>:
-800004a8: 73 25 30 80  	csrr	a0, 2051
-800004ac: 83 22 c5 01  	lw	t0, 28(a0)
-800004b0: 57 c0 02 5e  	vmv.v.x	v0, t0
-800004b4: 67 80 00 00  	ret
+800004c0 <__builtin_riscv_local_size_y>:
+800004c0: 73 25 30 80  	csrr	a0, 2051
+800004c4: 83 22 c5 01  	lw	t0, 28(a0)
+800004c8: 57 c0 02 5e  	vmv.v.x	v0, t0
+800004cc: 67 80 00 00  	ret
 
-800004b8 <__builtin_riscv_local_size_z>:
-800004b8: 73 25 30 80  	csrr	a0, 2051
-800004bc: 83 22 05 02  	lw	t0, 32(a0)
-800004c0: 57 c0 02 5e  	vmv.v.x	v0, t0
-800004c4: 67 80 00 00  	ret
+800004d0 <__builtin_riscv_local_size_z>:
+800004d0: 73 25 30 80  	csrr	a0, 2051
+800004d4: 83 22 05 02  	lw	t0, 32(a0)
+800004d8: 57 c0 02 5e  	vmv.v.x	v0, t0
+800004dc: 67 80 00 00  	ret
 
-800004c8 <__builtin_riscv_global_size_x>:
-800004c8: 73 25 30 80  	csrr	a0, 2051
-800004cc: 83 22 c5 00  	lw	t0, 12(a0)
-800004d0: 57 c0 02 5e  	vmv.v.x	v0, t0
-800004d4: 67 80 00 00  	ret
+800004e0 <__builtin_riscv_global_size_x>:
+800004e0: 73 25 30 80  	csrr	a0, 2051
+800004e4: 83 22 c5 00  	lw	t0, 12(a0)
+800004e8: 57 c0 02 5e  	vmv.v.x	v0, t0
+800004ec: 67 80 00 00  	ret
 
-800004d8 <__builtin_riscv_global_size_y>:
-800004d8: 73 25 30 80  	csrr	a0, 2051
-800004dc: 83 22 05 01  	lw	t0, 16(a0)
-800004e0: 57 c0 02 5e  	vmv.v.x	v0, t0
-800004e4: 67 80 00 00  	ret
+800004f0 <__builtin_riscv_global_size_y>:
+800004f0: 73 25 30 80  	csrr	a0, 2051
+800004f4: 83 22 05 01  	lw	t0, 16(a0)
+800004f8: 57 c0 02 5e  	vmv.v.x	v0, t0
+800004fc: 67 80 00 00  	ret
 
-800004e8 <__builtin_riscv_global_size_z>:
-800004e8: 73 25 30 80  	csrr	a0, 2051
-800004ec: 83 22 45 01  	lw	t0, 20(a0)
-800004f0: 57 c0 02 5e  	vmv.v.x	v0, t0
-800004f4: 67 80 00 00  	ret
+80000500 <__builtin_riscv_global_size_z>:
+80000500: 73 25 30 80  	csrr	a0, 2051
+80000504: 83 22 45 01  	lw	t0, 20(a0)
+80000508: 57 c0 02 5e  	vmv.v.x	v0, t0
+8000050c: 67 80 00 00  	ret
 
-800004f8 <__builtin_riscv_global_offset_x>:
-800004f8: 73 25 30 80  	csrr	a0, 2051
-800004fc: 83 22 45 02  	lw	t0, 36(a0)
-80000500: 57 c0 02 5e  	vmv.v.x	v0, t0
-80000504: 67 80 00 00  	ret
+80000510 <__builtin_riscv_global_offset_x>:
+80000510: 73 25 30 80  	csrr	a0, 2051
+80000514: 83 22 45 02  	lw	t0, 36(a0)
+80000518: 57 c0 02 5e  	vmv.v.x	v0, t0
+8000051c: 67 80 00 00  	ret
 
-80000508 <__builtin_riscv_global_offset_y>:
-80000508: 73 25 30 80  	csrr	a0, 2051
-8000050c: 83 22 85 02  	lw	t0, 40(a0)
-80000510: 57 c0 02 5e  	vmv.v.x	v0, t0
-80000514: 67 80 00 00  	ret
+80000520 <__builtin_riscv_global_offset_y>:
+80000520: 73 25 30 80  	csrr	a0, 2051
+80000524: 83 22 85 02  	lw	t0, 40(a0)
+80000528: 57 c0 02 5e  	vmv.v.x	v0, t0
+8000052c: 67 80 00 00  	ret
 
-80000518 <__builtin_riscv_global_offset_z>:
-80000518: 73 25 30 80  	csrr	a0, 2051
-8000051c: 83 22 c5 02  	lw	t0, 44(a0)
-80000520: 57 c0 02 5e  	vmv.v.x	v0, t0
-80000524: 67 80 00 00  	ret
-
-80000528 <__builtin_riscv_num_groups_x>:
-80000528: 73 25 30 80  	csrr	a0, 2051
-8000052c: 03 23 c5 00  	lw	t1, 12(a0)
-80000530: 83 22 85 01  	lw	t0, 24(a0)
-80000534: 33 53 53 02  	divu	t1, t1, t0
-80000538: 57 40 03 5e  	vmv.v.x	v0, t1
+80000530 <__builtin_riscv_global_offset_z>:
+80000530: 73 25 30 80  	csrr	a0, 2051
+80000534: 83 22 c5 02  	lw	t0, 44(a0)
+80000538: 57 c0 02 5e  	vmv.v.x	v0, t0
 8000053c: 67 80 00 00  	ret
 
-80000540 <__builtin_riscv_num_groups_y>:
+80000540 <__builtin_riscv_num_groups_x>:
 80000540: 73 25 30 80  	csrr	a0, 2051
-80000544: 03 23 05 01  	lw	t1, 16(a0)
-80000548: 83 22 c5 01  	lw	t0, 28(a0)
+80000544: 03 23 c5 00  	lw	t1, 12(a0)
+80000548: 83 22 85 01  	lw	t0, 24(a0)
 8000054c: 33 53 53 02  	divu	t1, t1, t0
 80000550: 57 40 03 5e  	vmv.v.x	v0, t1
 80000554: 67 80 00 00  	ret
 
-80000558 <__builtin_riscv_num_groups_z>:
+80000558 <__builtin_riscv_num_groups_y>:
 80000558: 73 25 30 80  	csrr	a0, 2051
-8000055c: 03 23 45 01  	lw	t1, 20(a0)
-80000560: 83 23 05 02  	lw	t2, 32(a0)
-80000564: 33 53 73 02  	divu	t1, t1, t2
+8000055c: 03 23 05 01  	lw	t1, 16(a0)
+80000560: 83 22 c5 01  	lw	t0, 28(a0)
+80000564: 33 53 53 02  	divu	t1, t1, t0
 80000568: 57 40 03 5e  	vmv.v.x	v0, t1
 8000056c: 67 80 00 00  	ret
 
-80000570 <__builtin_riscv_work_dim>:
+80000570 <__builtin_riscv_num_groups_z>:
 80000570: 73 25 30 80  	csrr	a0, 2051
-80000574: 83 22 85 00  	lw	t0, 8(a0)
-80000578: 57 c0 02 5e  	vmv.v.x	v0, t0
-8000057c: 67 80 00 00  	ret
+80000574: 03 23 45 01  	lw	t1, 20(a0)
+80000578: 83 23 05 02  	lw	t2, 32(a0)
+8000057c: 33 53 73 02  	divu	t1, t1, t2
+80000580: 57 40 03 5e  	vmv.v.x	v0, t1
+80000584: 67 80 00 00  	ret
+
+80000588 <__builtin_riscv_work_dim>:
+80000588: 73 25 30 80  	csrr	a0, 2051
+8000058c: 83 22 85 00  	lw	t0, 8(a0)
+80000590: 57 c0 02 5e  	vmv.v.x	v0, t0
+80000594: 67 80 00 00  	ret
