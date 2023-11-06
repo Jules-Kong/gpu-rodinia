@@ -1,3 +1,5 @@
 #!/bin/bash
 
-./kmeans.out -o -i ../../data/kmeans/204800.txt -p 0 -d 0
+# Such input is too large for ventus, please look up the ../../data/kmeans folder and generate following input file.
+# ./kmeans.out -o -i ../../data/kmeans/204800.txt -p 0 -d 0
+./kmeans.out -o -i ../../data/kmeans/1024_34.txt -p 0 -d 0
