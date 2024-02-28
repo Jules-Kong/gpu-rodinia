@@ -1,3 +1,0 @@
-#!/bin/bash
-
-./kmeans.out -o -i ../../data/kmeans/32_34.txt -p 0 -d 0
