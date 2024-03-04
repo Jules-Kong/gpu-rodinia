@@ -14,73 +14,73 @@ Warning: the memory at  [0x90000000, 0x900010FF] has been realigned
 to the 4 KiB page size: [0x90000000, 0x90001FFF]
 Warning: the memory at  [0x90002000, 0x900030FF] has been realigned
 to the 4 KiB page size: [0x90002000, 0x90003FFF]
-[2024-03-04 09:47:37.609684980] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 632:
+[2024-03-04 09:45:58.767084809] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 632:
   *** INFO ***  |    VENTUS |  Allocating kernel arg buffer entry:
 Warning: the memory at  [0x90004000, 0x9000400F] has been realigned
 to the 4 KiB page size: [0x90004000, 0x90004FFF]
-[2024-03-04 09:47:37.632214060] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 686:
+[2024-03-04 09:45:58.799010168] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 686:
   *** INFO ***  |    VENTUS |  Kernel entry of "kmeans_swap" is : "0x80000230"
-[2024-03-04 09:47:37.645247854] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 749:
+[2024-03-04 09:45:58.814178014] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 749:
   *** INFO ***  |    VENTUS |  Vmem file has been written to object.vmem
-[2024-03-04 09:47:37.645485456] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 793:
+[2024-03-04 09:45:58.814402641] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 793:
   *** INFO ***  |    VENTUS |  Preparing private memory of ventus:
-[2024-03-04 09:47:37.645494106] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 828:
+[2024-03-04 09:45:58.814412701] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 828:
   *** INFO ***  |    VENTUS |  Allocating metadata space:
 Warning: the memory at  [0x90025000, 0x9002503F] has been realigned
 to the 4 KiB page size: [0x90025000, 0x90025FFF]
-[2024-03-04 09:47:37.645502900] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 838:
+[2024-03-04 09:45:58.814422000] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 838:
   *** INFO ***  |    VENTUS |  kernel metadata has been written to 0x90025000
 Warning: the memory at  [0x90004000, 0x900042A7] has been realigned
 to the 4 KiB page size: [0x90004000, 0x90004FFF]
 Warning: the memory at  [0x90005000, 0x9000507F] has been realigned
 to the 4 KiB page size: [0x90005000, 0x90005FFF]
-[2024-03-04 09:47:37.673144131] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 632:
+[2024-03-04 09:45:58.828442811] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 632:
   *** INFO ***  |    VENTUS |  Allocating kernel arg buffer entry:
 Warning: the memory at  [0x90006000, 0x9000601F] has been realigned
 to the 4 KiB page size: [0x90006000, 0x90006FFF]
-[2024-03-04 09:47:37.697186642] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 686:
+[2024-03-04 09:45:58.860100523] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 686:
   *** INFO ***  |    VENTUS |  Kernel entry of "kmeans_kernel_c" is : "0x800000b8"
-[2024-03-04 09:47:37.710576131] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 749:
+[2024-03-04 09:45:58.875592746] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 749:
   *** INFO ***  |    VENTUS |  Vmem file has been written to object.vmem
-[2024-03-04 09:47:37.710748377] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 793:
+[2024-03-04 09:45:58.875789377] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 793:
   *** INFO ***  |    VENTUS |  Preparing private memory of ventus:
-[2024-03-04 09:47:37.710760540] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 828:
+[2024-03-04 09:45:58.875800448] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 828:
   *** INFO ***  |    VENTUS |  Allocating metadata space:
 Warning: the memory at  [0x90027000, 0x9002703F] has been realigned
 to the 4 KiB page size: [0x90027000, 0x90027FFF]
-[2024-03-04 09:47:37.710767134] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 838:
+[2024-03-04 09:45:58.875806368] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 838:
   *** INFO ***  |    VENTUS |  kernel metadata has been written to 0x90027000
-[2024-03-04 09:47:37.780563978] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 632:
+[2024-03-04 09:45:58.917130908] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 632:
   *** INFO ***  |    VENTUS |  Allocating kernel arg buffer entry:
 Warning: the memory at  [0x90006000, 0x9000601F] has been realigned
 to the 4 KiB page size: [0x90006000, 0x90006FFF]
-[2024-03-04 09:47:37.803096762] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 686:
+[2024-03-04 09:45:58.939848785] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 686:
   *** INFO ***  |    VENTUS |  Kernel entry of "kmeans_kernel_c" is : "0x800000b8"
-[2024-03-04 09:47:37.817113103] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 749:
+[2024-03-04 09:45:58.953965117] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 749:
   *** INFO ***  |    VENTUS |  Vmem file has been written to object.vmem
-[2024-03-04 09:47:37.817326186] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 793:
+[2024-03-04 09:45:58.954198195] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 793:
   *** INFO ***  |    VENTUS |  Preparing private memory of ventus:
-[2024-03-04 09:47:37.817363001] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 828:
+[2024-03-04 09:45:58.954208669] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 828:
   *** INFO ***  |    VENTUS |  Allocating metadata space:
 Warning: the memory at  [0x90027000, 0x9002703F] has been realigned
 to the 4 KiB page size: [0x90027000, 0x90027FFF]
-[2024-03-04 09:47:37.817413375] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 838:
+[2024-03-04 09:45:58.954214070] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 838:
   *** INFO ***  |    VENTUS |  kernel metadata has been written to 0x90027000
-[2024-03-04 09:47:37.892444627] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 632:
+[2024-03-04 09:45:58.995973945] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 632:
   *** INFO ***  |    VENTUS |  Allocating kernel arg buffer entry:
 Warning: the memory at  [0x90006000, 0x9000601F] has been realigned
 to the 4 KiB page size: [0x90006000, 0x90006FFF]
-[2024-03-04 09:47:37.918851115] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 686:
+[2024-03-04 09:45:59.018780504] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 686:
   *** INFO ***  |    VENTUS |  Kernel entry of "kmeans_kernel_c" is : "0x800000b8"
-[2024-03-04 09:47:37.934387544] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 749:
+[2024-03-04 09:45:59.032426990] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 749:
   *** INFO ***  |    VENTUS |  Vmem file has been written to object.vmem
-[2024-03-04 09:47:37.934602931] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 793:
+[2024-03-04 09:45:59.032621121] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 793:
   *** INFO ***  |    VENTUS |  Preparing private memory of ventus:
-[2024-03-04 09:47:37.934656772] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 828:
+[2024-03-04 09:45:59.032631086] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 828:
   *** INFO ***  |    VENTUS |  Allocating metadata space:
 Warning: the memory at  [0x90027000, 0x9002703F] has been realigned
 to the 4 KiB page size: [0x90027000, 0x90027FFF]
-[2024-03-04 09:47:37.934706908] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 838:
+[2024-03-04 09:45:59.032637337] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 838:
   *** INFO ***  |    VENTUS |  kernel metadata has been written to 0x90027000
 to allocate at 0x90000000 with 8192 bytes 
 to copy to 0x90000000 with 4352 bytes
@@ -91,10 +91,10 @@ to copy to 0x90004000 with 16 bytes
 to allocate at 0x90005000 with 131072 bytes 
 to allocate at 0x90025000 with 4096 bytes 
 to copy to 0x90025000 with 64 bytes
-arg gpgpu is numw:8,numt:4,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x10000000,pdsbase:0x90005000,knlbase:0x90025000,currwgid:0
+arg gpgpu is numw:4,numt:8,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x10000000,pdsbase:0x90005000,knlbase:0x90025000,currwgid:0
 vaddr mem scope is -m0x70000000:0x90026000
 src file is object.riscv, run log is written to object.riscv.log
-spike -l --log-commits -p8 --isa rv32gcv_zfh --pc=0x80000000 -m0x70000000:0x90026000 --varch vlen:128,elen:32 --gpgpuarch numw:8,numt:4,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x10000000,pdsbase:0x90005000,knlbase:0x90025000,currwgid:0 --log=object.riscv.log object.riscv 
+spike -l --log-commits -p4 --isa rv32gcv_zfh --pc=0x80000000 -m0x70000000:0x90026000 --varch vlen:256,elen:32 --gpgpuarch numw:4,numt:8,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x10000000,pdsbase:0x90005000,knlbase:0x90025000,currwgid:0 --log=object.riscv.log object.riscv 
 Log file object.riscv.log renamed successfully to kmeans_swap_0.log.
 to allocate at 0x90004000 with 4096 bytes 
 to copy to 0x90004000 with 680 bytes
@@ -105,10 +105,10 @@ to copy to 0x90006000 with 32 bytes
 to allocate at 0x90007000 with 131072 bytes 
 to allocate at 0x90027000 with 4096 bytes 
 to copy to 0x90027000 with 64 bytes
-arg gpgpu is numw:8,numt:4,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x10000000,pdsbase:0x90007000,knlbase:0x90027000,currwgid:0
+arg gpgpu is numw:4,numt:8,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x10000000,pdsbase:0x90007000,knlbase:0x90027000,currwgid:0
 vaddr mem scope is -m0x70000000:0x90028000
 src file is object.riscv, run log is written to object.riscv.log
-spike -l --log-commits -p8 --isa rv32gcv_zfh --pc=0x80000000 -m0x70000000:0x90028000 --varch vlen:128,elen:32 --gpgpuarch numw:8,numt:4,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x10000000,pdsbase:0x90007000,knlbase:0x90027000,currwgid:0 --log=object.riscv.log object.riscv 
+spike -l --log-commits -p4 --isa rv32gcv_zfh --pc=0x80000000 -m0x70000000:0x90028000 --varch vlen:256,elen:32 --gpgpuarch numw:4,numt:8,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x10000000,pdsbase:0x90007000,knlbase:0x90027000,currwgid:0 --log=object.riscv.log object.riscv 
 Log file object.riscv.log renamed successfully to kmeans_kernel_c_0.log.
 to copy from 0x90005000 with 128 bytes
 to copy to 0x90004000 with 680 bytes
@@ -118,10 +118,10 @@ to copy to 0x90006000 with 32 bytes
 to allocate at 0x90007000 with 131072 bytes 
 to allocate at 0x90027000 with 4096 bytes 
 to copy to 0x90027000 with 64 bytes
-arg gpgpu is numw:8,numt:4,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x10000000,pdsbase:0x90007000,knlbase:0x90027000,currwgid:0
+arg gpgpu is numw:4,numt:8,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x10000000,pdsbase:0x90007000,knlbase:0x90027000,currwgid:0
 vaddr mem scope is -m0x70000000:0x90028000
 src file is object.riscv, run log is written to object.riscv.log
-spike -l --log-commits -p8 --isa rv32gcv_zfh --pc=0x80000000 -m0x70000000:0x90028000 --varch vlen:128,elen:32 --gpgpuarch numw:8,numt:4,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x10000000,pdsbase:0x90007000,knlbase:0x90027000,currwgid:0 --log=object.riscv.log object.riscv 
+spike -l --log-commits -p4 --isa rv32gcv_zfh --pc=0x80000000 -m0x70000000:0x90028000 --varch vlen:256,elen:32 --gpgpuarch numw:4,numt:8,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x10000000,pdsbase:0x90007000,knlbase:0x90027000,currwgid:0 --log=object.riscv.log object.riscv 
 Log file object.riscv.log renamed successfully to kmeans_kernel_c_1.log.
 to copy from 0x90005000 with 128 bytes
 to copy to 0x90004000 with 680 bytes
@@ -131,10 +131,10 @@ to copy to 0x90006000 with 32 bytes
 to allocate at 0x90007000 with 131072 bytes 
 to allocate at 0x90027000 with 4096 bytes 
 to copy to 0x90027000 with 64 bytes
-arg gpgpu is numw:8,numt:4,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x10000000,pdsbase:0x90007000,knlbase:0x90027000,currwgid:0
+arg gpgpu is numw:4,numt:8,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x10000000,pdsbase:0x90007000,knlbase:0x90027000,currwgid:0
 vaddr mem scope is -m0x70000000:0x90028000
 src file is object.riscv, run log is written to object.riscv.log
-spike -l --log-commits -p8 --isa rv32gcv_zfh --pc=0x80000000 -m0x70000000:0x90028000 --varch vlen:128,elen:32 --gpgpuarch numw:8,numt:4,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x10000000,pdsbase:0x90007000,knlbase:0x90027000,currwgid:0 --log=object.riscv.log object.riscv 
+spike -l --log-commits -p4 --isa rv32gcv_zfh --pc=0x80000000 -m0x70000000:0x90028000 --varch vlen:256,elen:32 --gpgpuarch numw:4,numt:8,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x10000000,pdsbase:0x90007000,knlbase:0x90027000,currwgid:0 --log=object.riscv.log object.riscv 
 Log file object.riscv.log renamed successfully to kmeans_kernel_c_2.log.
 to copy from 0x90005000 with 128 bytes
 iterated 3 times
