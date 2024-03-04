@@ -141,7 +141,7 @@ float *OpenClFindNearestNeighbors(
     // 4. enqueue kernel
     size_t globalWorkSize[1];
     globalWorkSize[0] = numRecords;
-    if (numRecords % 32) globalWorkSize[0] += 32 - (numRecords % 32);
+    if (numRecords % 64) globalWorkSize[0] += 64 - (numRecords % 64);
     //printf("Global Work Size: %zu\n",globalWorkSize[0]);      
 
     error = clEnqueueNDRangeKernel(
@@ -285,7 +285,7 @@ int loadData(char *filename,std::vector<Record> &records,std::vector<LatLong> &l
             records.push_back(record);
             recNum++;
 	   
-	          if(recNum>=16)break;
+	          if(recNum>=50)break;
         }
         fclose(fp);
     }
