@@ -24,69 +24,69 @@ Warning: the memory at  [0x90005000, 0x9000507F] has been realigned
 to the 4 KiB page size: [0x90005000, 0x90005FFF]
 Warning: the memory at  [0x90006000, 0x90006000] has been realigned
 to the 4 KiB page size: [0x90006000, 0x90006FFF]
-[2024-03-05 09:48:55.365722260] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 632:
+[2024-03-05 10:09:16.783685958] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 632:
   *** INFO ***  |    VENTUS |  Allocating kernel arg buffer entry:
 Warning: the memory at  [0x90007000, 0x9000701B] has been realigned
 to the 4 KiB page size: [0x90007000, 0x90007FFF]
-[2024-03-05 09:48:55.387198888] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 686:
+[2024-03-05 10:09:16.805896917] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 686:
   *** INFO ***  |    VENTUS |  Kernel entry of "BFS_1" is : "0x800000b8"
-[2024-03-05 09:48:55.399986076] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 749:
+[2024-03-05 10:09:16.818998136] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 749:
   *** INFO ***  |    VENTUS |  Vmem file has been written to object.vmem
-[2024-03-05 09:48:55.400197111] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 793:
+[2024-03-05 10:09:16.819226283] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 793:
   *** INFO ***  |    VENTUS |  Preparing private memory of ventus:
-[2024-03-05 09:48:55.400208300] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 828:
+[2024-03-05 10:09:16.819239172] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 828:
   *** INFO ***  |    VENTUS |  Allocating metadata space:
 Warning: the memory at  [0x90028000, 0x9002803F] has been realigned
 to the 4 KiB page size: [0x90028000, 0x90028FFF]
-[2024-03-05 09:48:55.400215622] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 838:
+[2024-03-05 10:09:16.819245986] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 838:
   *** INFO ***  |    VENTUS |  kernel metadata has been written to 0x90028000
-[2024-03-05 09:48:55.411069935] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 632:
+[2024-03-05 10:09:16.828882013] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 632:
   *** INFO ***  |    VENTUS |  Allocating kernel arg buffer entry:
 Warning: the memory at  [0x90007000, 0x90007013] has been realigned
 to the 4 KiB page size: [0x90007000, 0x90007FFF]
-[2024-03-05 09:48:55.434323094] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 686:
+[2024-03-05 10:09:16.850076123] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 686:
   *** INFO ***  |    VENTUS |  Kernel entry of "BFS_2" is : "0x800001ec"
-[2024-03-05 09:48:55.447822264] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 749:
+[2024-03-05 10:09:16.862863995] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 749:
   *** INFO ***  |    VENTUS |  Vmem file has been written to object.vmem
-[2024-03-05 09:48:55.447965525] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 793:
+[2024-03-05 10:09:16.863041085] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 793:
   *** INFO ***  |    VENTUS |  Preparing private memory of ventus:
-[2024-03-05 09:48:55.447974843] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 828:
+[2024-03-05 10:09:16.863050800] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 828:
   *** INFO ***  |    VENTUS |  Allocating metadata space:
 Warning: the memory at  [0x90028000, 0x9002803F] has been realigned
 to the 4 KiB page size: [0x90028000, 0x90028FFF]
-[2024-03-05 09:48:55.447990147] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 838:
+[2024-03-05 10:09:16.863057210] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 838:
   *** INFO ***  |    VENTUS |  kernel metadata has been written to 0x90028000
-[2024-03-05 09:48:55.455691613] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 632:
+[2024-03-05 10:09:16.870418984] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 632:
   *** INFO ***  |    VENTUS |  Allocating kernel arg buffer entry:
 Warning: the memory at  [0x90007000, 0x9000701B] has been realigned
 to the 4 KiB page size: [0x90007000, 0x90007FFF]
-[2024-03-05 09:48:55.479243708] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 686:
+[2024-03-05 10:09:16.891782695] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 686:
   *** INFO ***  |    VENTUS |  Kernel entry of "BFS_1" is : "0x800000b8"
-[2024-03-05 09:48:55.494221132] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 749:
+[2024-03-05 10:09:16.905069269] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 749:
   *** INFO ***  |    VENTUS |  Vmem file has been written to object.vmem
-[2024-03-05 09:48:55.494374446] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 793:
+[2024-03-05 10:09:16.905221484] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 793:
   *** INFO ***  |    VENTUS |  Preparing private memory of ventus:
-[2024-03-05 09:48:55.494383698] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 828:
+[2024-03-05 10:09:16.905231300] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 828:
   *** INFO ***  |    VENTUS |  Allocating metadata space:
 Warning: the memory at  [0x90028000, 0x9002803F] has been realigned
 to the 4 KiB page size: [0x90028000, 0x90028FFF]
-[2024-03-05 09:48:55.494390771] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 838:
+[2024-03-05 10:09:16.905238276] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 838:
   *** INFO ***  |    VENTUS |  kernel metadata has been written to 0x90028000
-[2024-03-05 09:48:55.504855170] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 632:
+[2024-03-05 10:09:16.914661336] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 632:
   *** INFO ***  |    VENTUS |  Allocating kernel arg buffer entry:
 Warning: the memory at  [0x90007000, 0x90007013] has been realigned
 to the 4 KiB page size: [0x90007000, 0x90007FFF]
-[2024-03-05 09:48:55.524980605] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 686:
+[2024-03-05 10:09:16.933937572] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 686:
   *** INFO ***  |    VENTUS |  Kernel entry of "BFS_2" is : "0x800001ec"
-[2024-03-05 09:48:55.538519821] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 749:
+[2024-03-05 10:09:16.946443781] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 749:
   *** INFO ***  |    VENTUS |  Vmem file has been written to object.vmem
-[2024-03-05 09:48:55.538673690] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 793:
+[2024-03-05 10:09:16.946599293] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 793:
   *** INFO ***  |    VENTUS |  Preparing private memory of ventus:
-[2024-03-05 09:48:55.538683048] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 828:
+[2024-03-05 10:09:16.946608810] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 828:
   *** INFO ***  |    VENTUS |  Allocating metadata space:
 Warning: the memory at  [0x90028000, 0x9002803F] has been realigned
 to the 4 KiB page size: [0x90028000, 0x90028FFF]
-[2024-03-05 09:48:55.538690299] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 838:
+[2024-03-05 10:09:16.946615210] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 838:
   *** INFO ***  |    VENTUS |  kernel metadata has been written to 0x90028000
 to allocate at 0x90000000 with 4096 bytes 
 to copy to 0x90000000 with 256 bytes
@@ -147,69 +147,69 @@ arg gpgpu is numw:4,numt:8,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,
 vaddr mem scope is -m0x70000000:0x90029000
 src file is object.riscv, run log is written to object.riscv.log
 spike -l --log-commits -p4 --isa rv32gcv_zfh --pc=0x80000000 -m0x70000000:0x90029000 --varch vlen:256,elen:32 --gpgpuarch numw:4,numt:8,numwg:1,kernelx:1,kernely:1,kernelz:1,ldssize:0x1000,pdssize:0x10000000,pdsbase:0x90008000,knlbase:0x90028000,currwgid:0 --log=object.riscv.log object.riscv 
-Log file obj[2024-03-05 09:48:55.545393395] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 632:
+Log file obj[2024-03-05 10:09:16.954098947] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 632:
   *** INFO ***  |    VENTUS |  Allocating kernel arg buffer entry:
 Warning: the memory at  [0x90007000, 0x9000701B] has been realigned
 to the 4 KiB page size: [0x90007000, 0x90007FFF]
-[2024-03-05 09:48:55.570194054] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 686:
+[2024-03-05 10:09:16.976841432] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 686:
   *** INFO ***  |    VENTUS |  Kernel entry of "BFS_1" is : "0x800000b8"
-[2024-03-05 09:48:55.585504784] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 749:
+[2024-03-05 10:09:16.992316307] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 749:
   *** INFO ***  |    VENTUS |  Vmem file has been written to object.vmem
-[2024-03-05 09:48:55.585657793] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 793:
+[2024-03-05 10:09:16.992476625] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 793:
   *** INFO ***  |    VENTUS |  Preparing private memory of ventus:
-[2024-03-05 09:48:55.585667749] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 828:
+[2024-03-05 10:09:16.992484816] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 828:
   *** INFO ***  |    VENTUS |  Allocating metadata space:
 Warning: the memory at  [0x90028000, 0x9002803F] has been realigned
 to the 4 KiB page size: [0x90028000, 0x90028FFF]
-[2024-03-05 09:48:55.585674993] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 838:
+[2024-03-05 10:09:16.992491491] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 838:
   *** INFO ***  |    VENTUS |  kernel metadata has been written to 0x90028000
-[2024-03-05 09:48:55.597830420] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 632:
+[2024-03-05 10:09:17.002716219] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 632:
   *** INFO ***  |    VENTUS |  Allocating kernel arg buffer entry:
 Warning: the memory at  [0x90007000, 0x90007013] has been realigned
 to the 4 KiB page size: [0x90007000, 0x90007FFF]
-[2024-03-05 09:48:55.619530175] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 686:
+[2024-03-05 10:09:17.023004317] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 686:
   *** INFO ***  |    VENTUS |  Kernel entry of "BFS_2" is : "0x800001ec"
-[2024-03-05 09:48:55.633311636] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 749:
+[2024-03-05 10:09:17.036965824] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 749:
   *** INFO ***  |    VENTUS |  Vmem file has been written to object.vmem
-[2024-03-05 09:48:55.633471418] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 793:
+[2024-03-05 10:09:17.037123025] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 793:
   *** INFO ***  |    VENTUS |  Preparing private memory of ventus:
-[2024-03-05 09:48:55.633481232] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 828:
+[2024-03-05 10:09:17.037132973] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 828:
   *** INFO ***  |    VENTUS |  Allocating metadata space:
 Warning: the memory at  [0x90028000, 0x9002803F] has been realigned
 to the 4 KiB page size: [0x90028000, 0x90028FFF]
-[2024-03-05 09:48:55.633488516] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 838:
+[2024-03-05 10:09:17.037138905] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 838:
   *** INFO ***  |    VENTUS |  kernel metadata has been written to 0x90028000
-[2024-03-05 09:48:55.640361262] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 632:
+[2024-03-05 10:09:17.044217861] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 632:
   *** INFO ***  |    VENTUS |  Allocating kernel arg buffer entry:
 Warning: the memory at  [0x90007000, 0x9000701B] has been realigned
 to the 4 KiB page size: [0x90007000, 0x90007FFF]
-[2024-03-05 09:48:55.664689424] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 686:
+[2024-03-05 10:09:17.064968564] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 686:
   *** INFO ***  |    VENTUS |  Kernel entry of "BFS_1" is : "0x800000b8"
-[2024-03-05 09:48:55.681312226] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 749:
+[2024-03-05 10:09:17.080955932] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 749:
   *** INFO ***  |    VENTUS |  Vmem file has been written to object.vmem
-[2024-03-05 09:48:55.681466500] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 793:
+[2024-03-05 10:09:17.081108460] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 793:
   *** INFO ***  |    VENTUS |  Preparing private memory of ventus:
-[2024-03-05 09:48:55.681477099] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 828:
+[2024-03-05 10:09:17.081117746] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 828:
   *** INFO ***  |    VENTUS |  Allocating metadata space:
 Warning: the memory at  [0x90028000, 0x9002803F] has been realigned
 to the 4 KiB page size: [0x90028000, 0x90028FFF]
-[2024-03-05 09:48:55.681484453] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 838:
+[2024-03-05 10:09:17.081125168] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 838:
   *** INFO ***  |    VENTUS |  kernel metadata has been written to 0x90028000
-[2024-03-05 09:48:55.690283073] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 632:
+[2024-03-05 10:09:17.090098413] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 632:
   *** INFO ***  |    VENTUS |  Allocating kernel arg buffer entry:
 Warning: the memory at  [0x90007000, 0x90007013] has been realigned
 to the 4 KiB page size: [0x90007000, 0x90007FFF]
-[2024-03-05 09:48:55.713127407] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 686:
+[2024-03-05 10:09:17.109786268] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 686:
   *** INFO ***  |    VENTUS |  Kernel entry of "BFS_2" is : "0x800001ec"
-[2024-03-05 09:48:55.726089927] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 749:
+[2024-03-05 10:09:17.124599951] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 749:
   *** INFO ***  |    VENTUS |  Vmem file has been written to object.vmem
-[2024-03-05 09:48:55.726242310] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 793:
+[2024-03-05 10:09:17.124756125] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 793:
   *** INFO ***  |    VENTUS |  Preparing private memory of ventus:
-[2024-03-05 09:48:55.726251889] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 828:
+[2024-03-05 10:09:17.124766469] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 828:
   *** INFO ***  |    VENTUS |  Allocating metadata space:
 Warning: the memory at  [0x90028000, 0x9002803F] has been realigned
 to the 4 KiB page size: [0x90028000, 0x90028FFF]
-[2024-03-05 09:48:55.726259427] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 838:
+[2024-03-05 10:09:17.124773617] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 838:
   *** INFO ***  |    VENTUS |  kernel metadata has been written to 0x90028000
 ect.riscv.log renamed successfully to BFS_2_1.log.
 to copy from 0x90006000 with 1 bytes
@@ -262,13 +262,13 @@ spike -l --log-commits -p4 --isa rv32gcv_zfh --pc=0x80000000 -m0x70000000:0x9002
 Log file object.riscv.log renamed successfully to BFS_2_3.log.
 to copy from 0x90006000 with 1 bytes
 to copy from 0x90005000 with 128 bytes
-Init: 343.253998
-MemAlloc: 0.009000
-HtoD: 0.038102
-Exec: 367.229431
-DtoH: 0.026926
-Close: 0.036000
-Total: 710.937988
+Init: 353.369995
+MemAlloc: 0.012000
+HtoD: 0.046728
+Exec: 347.414429
+DtoH: 0.028383
+Close: 0.039000
+Total: 701.260986
 cpu_results:  0 1 3 2 2 3 1 3 2 1 3 2 2 2 1 2 2 3 2 2 2 1 2 3 1 2 3 2 2 2 1 2
 gpu_results:  0 1 3 2 2 3 1 3 2 1 3 2 2 2 1 2 2 3 2 2 2 1 2 3 1 2 3 2 2 2 1 2
 --cambine:passed:-)
