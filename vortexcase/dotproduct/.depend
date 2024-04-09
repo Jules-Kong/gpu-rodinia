@@ -1,0 +1,4 @@
+main.o: main.cc oclUtils.h shrUtils.h shrQATest.h
+oclUtils.o: oclUtils.cpp oclUtils.h shrUtils.h
+shrUtils.o: shrUtils.cpp shrUtils.h cmd_arg_reader.h exception.h
+cmd_arg_reader.o: cmd_arg_reader.cpp cmd_arg_reader.h exception.h

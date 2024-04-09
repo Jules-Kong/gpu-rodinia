@@ -83,7 +83,7 @@ int main(int argc, char** argv) {
 	pb_SwitchToTimer(&timers, pb_TimerID_COMPUTE);
 	
 	//declaration
-	int nx,ny,nz;
+	size_t nx,ny,nz;
 	int size;
 	int iteration;
 	float c0=1.0f/6.0f;
@@ -145,10 +145,14 @@ int main(int argc, char** argv) {
 	uint8_t *kernel_bin = NULL;
 	size_t kernel_size;
 	cl_int binary_status = 0;  
-	clStatus = read_kernel_file("kernel.pocl", &kernel_bin, &kernel_size);
+	// clStatus = read_kernel_file("kernel.pocl", &kernel_bin, &kernel_size);
+	// CHECK_ERROR("read_kernel_file")  
+	// cl_program clProgram = clCreateProgramWithBinary(
+	// 	clContext, 1, &clDevice, &kernel_size, (const uint8_t**)&kernel_bin, &binary_status, &clStatus);
+	clStatus = read_kernel_file("kernel.cl", &kernel_bin, &kernel_size);
 	CHECK_ERROR("read_kernel_file")  
-	cl_program clProgram = clCreateProgramWithBinary(
-		clContext, 1, &clDevice, &kernel_size, (const uint8_t**)&kernel_bin, &binary_status, &clStatus);
+	cl_program clProgram = clCreateProgramWithSource(
+		clContext, 1, (const char**)&kernel_bin, &kernel_size,  &clStatus);
 	CHECK_ERROR("clCreateProgramWithSource")
 
 	char clOptions[50];
@@ -196,7 +200,7 @@ int main(int argc, char** argv) {
 	pb_SwitchToTimer(&timers, pb_TimerID_COMPUTE);
 
 	//only use 1D thread block
-  	int tx = 128;
+  	size_t tx = 128;
 	size_t block[3] = {tx,1,1};
 	size_t grid[3] = {(nx-2+tx-1)/tx*tx,ny-2,nz-2};
   	//size_t grid[3] = {nx-2,ny-2,nz-2};

@@ -129,17 +129,17 @@ int main (int argc, char **argv) {
   c_memobj = CL_CHECK2(clCreateBuffer(context, CL_MEM_WRITE_ONLY, nbytes, NULL, &_err));
 
   printf("Create program from kernel source\n");
-#ifdef HOSTGPU
+// #ifdef HOSTGPU
   if (0 != read_kernel_file("kernel.cl", &kernel_bin, &kernel_size))
     return -1;
   program = CL_CHECK2(clCreateProgramWithSource(
     context, 1, (const char**)&kernel_bin, &kernel_size, &_err));  
-#else
-  if (0 != read_kernel_file("kernel.pocl", &kernel_bin, &kernel_size))
-    return -1;
-  program = CL_CHECK2(clCreateProgramWithBinary(
-    context, 1, &device_id, &kernel_size, (const uint8_t**)&kernel_bin, NULL, &_err));
-#endif
+// #else
+//   if (0 != read_kernel_file("kernel.pocl", &kernel_bin, &kernel_size))
+//     return -1;
+//   program = CL_CHECK2(clCreateProgramWithBinary(
+//     context, 1, &device_id, &kernel_size, (const uint8_t**)&kernel_bin, NULL, &_err));
+// #endif
 
   // Build program
   CL_CHECK(clBuildProgram(program, 1, &device_id, NULL, NULL, NULL));
@@ -175,7 +175,7 @@ int main (int argc, char **argv) {
   CL_CHECK(clEnqueueWriteBuffer(commandQueue, a_memobj, CL_TRUE, 0, nbytes, h_a, 0, NULL, NULL));
 
   printf("Execute the kernel\n");
-  size_t global_work_size[1] = {size};
+  size_t global_work_size[1] = {(uint64_t)size};
   size_t local_work_size[1] = {1};
   auto time_start = std::chrono::high_resolution_clock::now();
   CL_CHECK(clEnqueueNDRangeKernel(commandQueue, kernel, 1, NULL, global_work_size, local_work_size, 0, NULL, NULL));

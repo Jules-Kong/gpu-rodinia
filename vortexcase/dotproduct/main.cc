@@ -161,9 +161,13 @@ int main(int argc, char **argv)
     // Create the program
     shrLog("clCreateProgramWithSource...\n");
     cl_int binary_status;
-    cl_program program =
-      clCreateProgramWithBinary(cxGPUContext, 1, cdDevices, &szKernelLength, (const uint8_t**)&cSourceCL, &binary_status, &ciErrNum);
-    oclCheckErrorEX(ciErrNum, CL_SUCCESS, pCleanup);
+    // cl_program program =
+    //   clCreateProgramWithBinary(cxGPUContext, 1, cdDevices, &szKernelLength, (const uint8_t**)&cSourceCL, &binary_status, &ciErrNum);
+    // oclCheckErrorEX(ciErrNum, CL_SUCCESS, pCleanup);
+    cl_program program = 
+      clCreateProgramWithSource(cxGPUContext, 1, (const char**)&cSourceCL, &szKernelLength, &ciErrNum);
+    
+
         // Build the program with 'mad' Optimization option
     #ifdef MAC
         char* flags = "-cl-fast-relaxed-math -DMAC";

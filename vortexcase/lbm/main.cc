@@ -240,10 +240,12 @@ void OpenCL_initialize(struct pb_Parameters *p, OpenCL_Param *prm) {
   uint8_t *kernel_bin = NULL;
   size_t kernel_size;
   cl_int binary_status = 0;  
-  clStatus = read_kernel_file("kernel.pocl", &kernel_bin, &kernel_size);
+  clStatus = read_kernel_file("kernel.cl", &kernel_bin, &kernel_size);
   CHECK_ERROR("read_kernel_file")  
-	prm->clProgram = clCreateProgramWithBinary(
-      prm->clContext, 1, &prm->clDevice, &kernel_size, (const uint8_t**)&kernel_bin, &binary_status, &clStatus);
+	// prm->clProgram = clCreateProgramWithBinary(
+  //     prm->clContext, 1, &prm->clDevice, &kernel_size, (const uint8_t**)&kernel_bin, &binary_status, &clStatus);
+  prm->clProgram = clCreateProgramWithSource(
+    prm->clContext, 1, (const char**)&kernel_bin, &kernel_size, &clStatus);
   CHECK_ERROR("clCreateProgramWithSource")
 
   //char clOptions[100];

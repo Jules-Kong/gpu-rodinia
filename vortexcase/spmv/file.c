@@ -12,6 +12,8 @@
 #include <stdio.h>
 #include <inttypes.h>
 
+#include "file.h"
+
 #if __BYTE_ORDER != __LITTLE_ENDIAN
 # error "File I/O is not implemented for this system: wrong endianness."
 #endif

@@ -169,17 +169,17 @@ int main(int argc, char **argv) {
   cl_mem memObjects[2] = {0, 0};
 
   printf("Create program from kernel source\n");
-#ifdef HOSTGPU
+// #ifdef HOSTGPU
   if (0 != read_kernel_file("kernel.cl", &kernel_bin, &kernel_size))
     return -1;
   program = CL_CHECK_ERR(clCreateProgramWithSource(
     context, 1, (const char**)&kernel_bin, &kernel_size, &_err));  
-#else
-  if (0 != read_kernel_file("kernel.pocl", &kernel_bin, &kernel_size))
-    return -1;
-  program = CL_CHECK_ERR(clCreateProgramWithBinary(
-    context, 1, &device_id, &kernel_size, (const uint8_t**)&kernel_bin, NULL, &_err));
-#endif
+// #else
+//   if (0 != read_kernel_file("kernel.pocl", &kernel_bin, &kernel_size))
+//     return -1;
+//   program = CL_CHECK_ERR(clCreateProgramWithBinary(
+//     context, 1, &device_id, &kernel_size, (const uint8_t**)&kernel_bin, NULL, &_err));
+// #endif
 
   // Build program
   CL_CHECK(clBuildProgram(program, 1, &device_id, NULL, NULL, NULL));
@@ -206,7 +206,7 @@ int main(int argc, char **argv) {
   CL_CHECK(clSetKernelArg(kernel, 2, sizeof(factor), &factor));
 
   size_t global_offset[1] = {0};
-  size_t global_work_size[1] = {size};
+  size_t global_work_size[1] = {(uint64_t)size};
   size_t local_work_size[1] = {1};
 
   printf("initialize buffers\n");

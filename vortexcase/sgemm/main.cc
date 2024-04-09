@@ -145,7 +145,7 @@ static void cleanup() {
   if (h_c) free(h_c);
 }
 
-int size = 32;
+uint64_t size = 32;
 
 static void show_usage() {
   printf("Usage: [-n size] [-h: help]\n");
@@ -202,17 +202,17 @@ int main (int argc, char **argv) {
   c_memobj = CL_CHECK2(clCreateBuffer(context, CL_MEM_WRITE_ONLY, nbytes, NULL, &_err));
 
   printf("Create program from kernel source\n");
-#ifdef HOSTGPU
+// #ifdef HOSTGPU
   if (0 != read_kernel_file("kernel.cl", &kernel_bin, &kernel_size))
     return -1;
   program = CL_CHECK2(clCreateProgramWithSource(
     context, 1, (const char**)&kernel_bin, &kernel_size, &_err));  
-#else
-  if (0 != read_kernel_file("kernel.pocl", &kernel_bin, &kernel_size))
-    return -1;
-  program = CL_CHECK2(clCreateProgramWithBinary(
-    context, 1, &device_id, &kernel_size, (const uint8_t**)&kernel_bin, NULL, &_err));
-#endif
+// #else
+//   if (0 != read_kernel_file("kernel.pocl", &kernel_bin, &kernel_size))
+//     return -1;
+//   program = CL_CHECK2(clCreateProgramWithBinary(
+//     context, 1, &device_id, &kernel_size, (const uint8_t**)&kernel_bin, NULL, &_err));
+// #endif
 
   // Build program
   CL_CHECK(clBuildProgram(program, 1, &device_id, NULL, NULL, NULL));

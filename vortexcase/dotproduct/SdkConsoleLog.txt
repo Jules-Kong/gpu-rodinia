@@ -1,0 +1,21 @@
+  # of Devices Available = 1
+  Using Device 0: Ventus GPGPU device
+  # of Compute Units = 512
+./dotproduct.out Starting...
+
+# of float elements per Array 	= 1024
+Global Work Size 		= 1024
+Local Work Size 		= 16
+# of Work Groups 		= 64
+
+Allocate and Init Host Mem...
+WARNING: NVIDIA OpenCL platform not found - defaulting to first platform!
+
+clCreateCommandQueue...
+clCreateBuffer (SrcA, SrcB and Dst in Device GMEM)...
+oclLoadProgSource (kernel.pocl)...
+
+ !!! Error # -9999 (Unspecified Error) at line 157 , in file main.cc !!!
+
+Starting Cleanup...
+

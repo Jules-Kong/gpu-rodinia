@@ -59,6 +59,11 @@ extern "C" void initBlackScholes(cl_context cxGPUContext, cl_command_queue cqPar
             cxGPUContext, 1, &device_id, &kernel_size, (const uint8_t**)&kernel_bin, &binary_status, &ciErrNum);
         shrCheckError(ciErrNum, CL_SUCCESS);
 
+        std::string source_str = FileToString(kernel_file);
+        const char * source = source_str.c_str();
+        size_t sourceSize[] = { source_str.length() };
+
+
     shrLog("...building BlackScholes program\n");
         ciErrNum = clBuildProgram(cpBlackScholes, 0, NULL, "-cl-fast-relaxed-math -Werror", NULL, NULL);
 

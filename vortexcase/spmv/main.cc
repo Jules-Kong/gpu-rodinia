@@ -96,10 +96,14 @@ int main(int argc, char **argv) {
    uint8_t *kernel_bin = NULL;
   size_t kernel_size;
   cl_int binary_status = 0;  
-  clStatus = read_kernel_file("kernel.pocl", &kernel_bin, &kernel_size);
+  // clStatus = read_kernel_file("kernel.pocl", &kernel_bin, &kernel_size);
+  // CHECK_ERROR("read_kernel_file")  
+	// cl_program clProgram = clCreateProgramWithBinary(
+  //     clContext, 1, &clDevice, &kernel_size, (const uint8_t**)&kernel_bin, &binary_status, &clStatus);
+  clStatus = read_kernel_file("kernel.cl", &kernel_bin, &kernel_size);
   CHECK_ERROR("read_kernel_file")  
-	cl_program clProgram = clCreateProgramWithBinary(
-      clContext, 1, &clDevice, &kernel_size, (const uint8_t**)&kernel_bin, &binary_status, &clStatus);
+  cl_program clProgram = clCreateProgramWithSource(
+      clContext, 1, (const char**)&kernel_bin, &kernel_size, &clStatus);
   CHECK_ERROR("clCreateProgramWithSource")
 
   char clOptions[50];
