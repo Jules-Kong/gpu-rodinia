@@ -118,7 +118,7 @@ void Cleanup(cl_device_id device_id, cl_context context, cl_command_queue comman
     clReleaseDevice(device_id);
 }
 
-int size = 1024;
+int size = 64;
 
 static void show_usage() {
   printf("Usage: [-n size] [-h: help]\n");
@@ -207,7 +207,7 @@ int main(int argc, char **argv) {
 
   size_t global_offset[1] = {0};
   size_t global_work_size[1] = {(uint64_t)size};
-  size_t local_work_size[1] = {1};
+  size_t local_work_size[1] = {(uint64_t)size};
 
   printf("initialize buffers\n");
   std::vector<float> ref_vec(size, 0.0f);
