@@ -1,0 +1,53 @@
+** Final POCL_DEBUG flags: 100000 
+Workload size=16
+[INFO]: [HW DRIVER] in [FILE] ventus.cpp,[LINE]25,[fn] vt_dev_open: vt_dev_open : hello world from ventus.cpp
+spike device initialize: allocating local memory: to allocate at 0x70000000 with 268435456 bytes 
+spike device initialize: allocating pc source memory: to allocate at 0x80000000 with 268435456 bytes 
+Create program from kernel source
+### options: -DPOCL_DEVICE_ADDRESS_BITS=32 -D__USE_CLANG_OPENCL_C_H -xcl -Dinline= -I. -cl-kernel-arg-info  -D__ENDIAN_LITTLE__=1 -DCL_DEVICE_MAX_GLOBAL_VARIABLE_SIZE=0 -D__OPENCL_VERSION__=200 -cl-std=CL2.0 -D__OPENCL_C_VERSION__=200 -Dcl_khr_fp64=1 -D__opencl_c_generic_address_space=1 -D__opencl_c_named_address_space_builtins=1 -cl-ext=-all,+cl_khr_fp64,+__opencl_c_generic_address_space,+__opencl_c_named_address_space_builtins -fno-builtin -triple=riscv32 -target-cpu ventus-gpgpu user_options: 
+### Triple: riscv32, CPU: ventus-gpgpu
+Warning: the memory at  [0x90000000, 0x900003FF] has been realigned
+to the 4 KiB page size: [0x90000000, 0x90000FFF]
+Warning: the memory at  [0x90001000, 0x900013FF] has been realigned
+to the 4 KiB page size: [0x90001000, 0x90001FFF]
+[2024-04-10 16:20:01.373807736] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 629:
+  *** INFO ***  |    VENTUS |  Allocating kernel arg buffer entry:
+Warning: the memory at  [0x90002000, 0x90002033] has been realigned
+to the 4 KiB page size: [0x90002000, 0x90002FFF]
+[2024-04-10 16:20:01.403313710] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 683:
+  *** INFO ***  |    VENTUS |  Kernel entry of "sfilter" is : "0x800000b8"
+[2024-04-10 16:20:02.119588122] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 714:
+  *** INFO ***  |    VENTUS |  Vmem file has been written to object.vmem
+[2024-04-10 16:20:02.119841312] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 766:
+  *** INFO ***  |    VENTUS |  Preparing private memory of ventus:
+[2024-04-10 16:20:02.119848618] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 801:
+  *** INFO ***  |    VENTUS |  Allocating metadata space:
+Warning: the memory at  [0x900E3000, 0x900E303F] has been realigned
+to the 4 KiB page size: [0x900E3000, 0x900E3FFF]
+[2024-04-10 16:20:02.119856915] POCL: in fn void pocl_ventus_run(void *, _cl_command_node *) at line 811:
+  *** INFO ***  |    VENTUS |  kernel metadata has been written to 0x900e3000
+create input buffer
+create output buffer
+create kernel
+setting up kernel args
+enqueue write buffer
+to allocate at 0x90000000 with 4096 bytes 
+to copy to 0x90000000 with 1024 bytes
+to allocate at 0x90001000 with 4096 bytes 
+to copy to 0x90001000 with 1024 bytes
+enqueue kernel
+notice that ventus hasn't support local buffer as argument yet.
+to allocate at 0x90002000 with 4096 bytes 
+to copy to 0x90002000 with 52 bytes
+to allocate at 0x90003000 with 917504 bytes 
+to allocate at 0x900e3000 with 4096 bytes 
+to copy to 0x900e3000 with 64 bytes
+arg gpgpu is numw:2,numt:8,numwg:14,kernelx:1,kernely:14,kernelz:1,ldssize:0x1000,pdssize:0x10000000,pdsbase:0x90003000,knlbase:0x900e3000,currwgid:0
+vaddr mem scope is -m0x70000000:0x900e4000
+src file is object.riscv, run log is written to object.riscv.log
+spike -l --log-commits -p28 --isa rv32gcv_zfh --pc=0x80000000 -m0x70000000:0x900e4000 --varch vlen:256,elen:32 --gpgpuarch numw:2,numt:8,numwg:14,kernelx:1,kernely:14,kernelz:1,ldssize:0x1000,pdssize:0x10000000,pdsbase:0x90003000,knlbase:0x900e3000,currwgid:0 --log=object.riscv.log object.riscv 
+Log file object.riscv.log renamed successfully to sfilter_0.log.
+Elapsed time: 817 ms
+Verify result
+to copy from 0x90001000 with 1024 bytes
+PASSED!
