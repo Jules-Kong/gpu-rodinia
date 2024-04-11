@@ -145,7 +145,7 @@ static void cleanup() {
   if (h_c) free(h_c);
 }
 
-uint64_t size = 32;
+uint64_t size = 8;
 
 static void show_usage() {
   printf("Usage: [-n size] [-h: help]\n");
@@ -240,7 +240,7 @@ int main (int argc, char **argv) {
 
   size_t global_offset[2] = {0, 0};
   size_t global_work_size[2] = {size, size};
-  size_t local_work_size[2] = {1, 1};
+  size_t local_work_size[2] = {size, size};
 
   std::vector<float> ref_vec(num_points);
 
