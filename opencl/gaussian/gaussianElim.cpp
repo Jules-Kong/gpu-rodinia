@@ -92,13 +92,13 @@ int main(int argc, char *argv[]) {
     
     // args
     char filename[200];
-    int show_data=0,quiet=0,timing=0,platform=0,device=0;
+    int show_data=0,quiet=0,timing=0,platform=0,device=0,compare=0;
     
     // parse command line
     if (parseCommandline(argc, argv, filename,
-			 &quiet, &show_data, &timing, &platform, &device, &size)) {
+			 &quiet, &show_data, &timing, &platform, &device, &compare, &size)) {
     printUsage();
-    return 0;
+    exit(1);
     }
 
 #ifdef  TIMING
@@ -111,6 +111,29 @@ int main(int argc, char *argv[]) {
 	init_time = tv.tv_sec * 1000.0 + (float) tv.tv_usec / 1000.0;
 #endif
 
+  char resname[200] = "result/";
+  if (compare) {
+    if(size < 1)
+      {
+        // get resname from filename and rm / and change .txt to .res
+        int i = strlen(filename);
+        while (filename[i] != '/')
+          i--;
+        i++;
+        strcat(resname, filename + i);
+        i = strlen(resname);
+        resname[i-3] = 'r';
+        resname[i-2] = 'e';
+        resname[i-1] = 's';
+      }
+    else
+      {
+        // resname = result/s${size}.res
+        // sprintf(resname, "result/s%d.res", size);
+        printf("compare is set, but testcase is randomly generated, can't compare\n");
+        exit(1);// 如果是随机生成的测例，需要cpu版本的ventus临时生成结果文件，目前不支持
+      }
+  }
     if(size < 1)
     {
 	fp = fopen(filename, "r");
@@ -170,6 +193,39 @@ int main(int argc, char *argv[]) {
         BackSub(a,b,finalVec,size);
         printf("The final solution is: \n");
         PrintAry(finalVec,size);
+    }
+
+    if (createCompareFile)
+    {
+        FILE *fpw = fopen(resname, "w");
+        if (fpw == NULL) {
+            printf("Error: unable to open file %s\n", resname);
+            exit(1);
+        }
+        PrintAryToFile(finalVec, size, fpw);
+        fclose(fpw);
+    }
+
+    //compare finalvec is enough i think
+    if (compare) // ensure precomputed result is available
+    {
+        float *compareVec = (float *) malloc(size * sizeof(float));
+        FILE *fpr = fopen(resname, "r");
+        if (fpr == NULL) {
+            printf("Error: unable to open file %s\n", resname);
+            exit(1);
+        }
+        InitAry(fpr, compareVec, size);
+        fclose(fpr);
+
+        int i;
+        for (i = 0; i < size; i++) {
+            if (fabs(compareVec[i] - finalVec[i]) > 0.01) {
+                printf("Error: finalVec[%d] = %f, while compareVec[%d] = %f\n", i, finalVec[i], i, compareVec[i]);
+                exit(1);
+            }
+        }
+        printf("Results match expected results\n");
     }
 
     free(m);
@@ -457,7 +513,7 @@ float eventTime(cl_event event,cl_command_queue command_queue){
 
  // Ke Wang add a function to generate input internally
 int parseCommandline(int argc, char *argv[], char* filename,
-                     int *q, int *v, int *t, int *p, int *d, int *size){
+                     int *q, int *v, int *t, int *p, int *d, int *c, int *size){
     int i;
     if (argc < 2) return 1; // error
     char flag;
@@ -496,6 +552,9 @@ int parseCommandline(int argc, char *argv[], char* filename,
               i++;
               *d = atoi(argv[i]);
               break;
+            case 'c': // compare
+              *c = 1;
+              break;
         }
       }
     }
@@ -520,6 +579,7 @@ void printUsage(){
   printf("\n");
   printf("-p [int]     Choose the platform (must choose both platform and device)\n");
   printf("-d [int]     Choose the device (must choose both platform and device)\n");
+  printf("-c           Compare the result to a precomputed result\n");
   printf("\n");
   printf("\n");
   printf("Notes: 1. The filename is required as the first parameter.\n");
@@ -604,5 +664,26 @@ void PrintAry(float *ary, int ary_size)
 	}
 	printf("\n\n");
 }
+
+void PrintAryToFile(float *ary, int ary_size, FILE *fp)
+{
+  int i;
+  for (i=0; i<ary_size; i++) {
+    fprintf(fp, "%f ", ary[i]);
+  }
+}
+
+void PrintMatToFile(float *ary, int size, int nrow, int ncol, FILE *fp)
+{
+  int i, j;
+  for (i=0; i<nrow; i++) {
+    for (j=0; j<ncol; j++) {
+      fprintf(fp, "%f ", *(ary+size*i+j));
+    }
+    fprintf(fp, "\n");
+  }
+  fprintf(fp, "\n");
+}
+
 #endif
 
